@@ -19,7 +19,7 @@ public class EscapeFromInsanityIsland {
      */
     public static void main(String[] args) {
         
-        Player playerOne =new Player();
+        Player playerOne = new Player();
         
         playerOne.setName("Castaway Carl");
         playerOne.setHighScore(1500);
