@@ -6,6 +6,7 @@
 package escape.from.insanity.island;
 
 import byui.cit260.escapeFromInsanityIsland.model.Player;
+import byui.cit260.escapeFromInsanityIsland.model.Resources;
 
 /**
  *
@@ -17,6 +18,7 @@ public class EscapeFromInsanityIsland {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        
         Player playerOne =new Player();
         
         playerOne.setName("Castaway Carl");
@@ -25,5 +27,6 @@ public class EscapeFromInsanityIsland {
         String playerInfo = playerOne.toString();
         System.out.println(playerInfo);
     }
-    
+        
+        
 }

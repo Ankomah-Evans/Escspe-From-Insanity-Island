@@ -8,6 +8,7 @@ package byui.cit260.escapeFromInsanityIsland.model;
 import java.util.Objects;
 
 /**
+ * 
  *
  * @author user
  */
