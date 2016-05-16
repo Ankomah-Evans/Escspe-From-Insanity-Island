@@ -11,7 +11,7 @@ import java.util.Objects;
  *
  * @author user
  */
-public class Character implements Serializable{
+public class Character implements Serializable {
     
     // class instance variable
     private String name;
@@ -19,6 +19,11 @@ public class Character implements Serializable{
     private double coordinates;
     private String type;
     private String mood;
+
+    public Character() {
+    }
+    
+    
 
     public String getName() {
         return name;
@@ -60,17 +65,14 @@ public class Character implements Serializable{
         this.mood = mood;
     }
 
-    public Character() {
-    }
-
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 71 * hash + Objects.hashCode(this.name);
-        hash = 71 * hash + Objects.hashCode(this.description);
-        hash = 71 * hash + (int) (Double.doubleToLongBits(this.coordinates) ^ (Double.doubleToLongBits(this.coordinates) >>> 32));
-        hash = 71 * hash + Objects.hashCode(this.type);
-        hash = 71 * hash + Objects.hashCode(this.mood);
+        hash = 13 * hash + Objects.hashCode(this.name);
+        hash = 13 * hash + Objects.hashCode(this.description);
+        hash = 13 * hash + (int) (Double.doubleToLongBits(this.coordinates) ^ (Double.doubleToLongBits(this.coordinates) >>> 32));
+        hash = 13 * hash + Objects.hashCode(this.type);
+        hash = 13 * hash + Objects.hashCode(this.mood);
         return hash;
     }
 
@@ -108,6 +110,5 @@ public class Character implements Serializable{
     public String toString() {
         return "Character{" + "name=" + name + ", description=" + description + ", coordinates=" + coordinates + ", type=" + type + ", mood=" + mood + '}';
     }
-    
     
 }

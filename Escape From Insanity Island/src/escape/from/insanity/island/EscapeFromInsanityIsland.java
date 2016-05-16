@@ -5,6 +5,7 @@
  */
 package escape.from.insanity.island;
 
+import byui.cit260.escapeFromInsanityIsland.model.Game;
 import byui.cit260.escapeFromInsanityIsland.model.Player;
 import byui.cit260.escapeFromInsanityIsland.model.Resources;
 
@@ -26,7 +27,19 @@ public class EscapeFromInsanityIsland {
         
         String playerInfo = playerOne.toString();
         System.out.println(playerInfo);
+    
+
+        Game gameOne = new Game();
+    
+        gameOne.setTotalTime(10.00);
+        gameOne.setNoPeople(1);
+        
+        String gameInfo = gameOne.toString();
+        System.out.println(gameInfo);
+        
+        
     }
+    
+    
         
-        
-}
+    }
