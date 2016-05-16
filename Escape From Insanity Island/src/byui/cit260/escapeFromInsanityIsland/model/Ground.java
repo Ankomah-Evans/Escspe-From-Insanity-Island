@@ -16,8 +16,11 @@ public class Ground implements Serializable {
     // class instance variable
     private String footPatterns;
     private String bentFoliage;
-    private String description;
 
+    public Ground() {
+    }
+
+    
     public String getFootPatterns() {
         return footPatterns;
     }
@@ -34,23 +37,11 @@ public class Ground implements Serializable {
         this.bentFoliage = bentFoliage;
     }
 
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public Ground() {
-    }
-
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 79 * hash + Objects.hashCode(this.footPatterns);
-        hash = 79 * hash + Objects.hashCode(this.bentFoliage);
-        hash = 79 * hash + Objects.hashCode(this.description);
+        hash = 59 * hash + Objects.hashCode(this.footPatterns);
+        hash = 59 * hash + Objects.hashCode(this.bentFoliage);
         return hash;
     }
 
@@ -72,15 +63,12 @@ public class Ground implements Serializable {
         if (!Objects.equals(this.bentFoliage, other.bentFoliage)) {
             return false;
         }
-        if (!Objects.equals(this.description, other.description)) {
-            return false;
-        }
         return true;
     }
 
     @Override
     public String toString() {
-        return "Ground{" + "footPatterns=" + footPatterns + ", bentFoliage=" + bentFoliage + ", description=" + description + '}';
+        return "Ground{" + "footPatterns=" + footPatterns + ", bentFoliage=" + bentFoliage + '}';
     }
     
     

@@ -14,33 +14,34 @@ import java.util.Objects;
 public class Map implements Serializable {
     
     // class instance variable
-    private Boolean rowCount;
-    private Boolean columnCount;  
-
-    public Boolean getRowCount() {
-        return rowCount;
-    }
-
-    public void setRowCount(Boolean rowCount) {
-        this.rowCount = rowCount;
-    }
-
-    public Boolean getColumnCount() {
-        return columnCount;
-    }
-
-    public void setColumnCount(Boolean columnCount) {
-        this.columnCount = columnCount;
-    }
+    private double rowCount;
+    private double columnCount;  
 
     public Map() {
     }
 
+    
+    public double getRowCount() {
+        return rowCount;
+    }
+
+    public void setRowCount(double rowCount) {
+        this.rowCount = rowCount;
+    }
+
+    public double getColumnCount() {
+        return columnCount;
+    }
+
+    public void setColumnCount(double columnCount) {
+        this.columnCount = columnCount;
+    }
+
     @Override
     public int hashCode() {
-        int hash = 5;
-        hash = 41 * hash + Objects.hashCode(this.rowCount);
-        hash = 41 * hash + Objects.hashCode(this.columnCount);
+        int hash = 7;
+        hash = 47 * hash + (int) (Double.doubleToLongBits(this.rowCount) ^ (Double.doubleToLongBits(this.rowCount) >>> 32));
+        hash = 47 * hash + (int) (Double.doubleToLongBits(this.columnCount) ^ (Double.doubleToLongBits(this.columnCount) >>> 32));
         return hash;
     }
 
@@ -56,10 +57,10 @@ public class Map implements Serializable {
             return false;
         }
         final Map other = (Map) obj;
-        if (!Objects.equals(this.rowCount, other.rowCount)) {
+        if (Double.doubleToLongBits(this.rowCount) != Double.doubleToLongBits(other.rowCount)) {
             return false;
         }
-        if (!Objects.equals(this.columnCount, other.columnCount)) {
+        if (Double.doubleToLongBits(this.columnCount) != Double.doubleToLongBits(other.columnCount)) {
             return false;
         }
         return true;
@@ -69,5 +70,7 @@ public class Map implements Serializable {
     public String toString() {
         return "Map{" + "rowCount=" + rowCount + ", columnCount=" + columnCount + '}';
     }
+
+  
     
 }

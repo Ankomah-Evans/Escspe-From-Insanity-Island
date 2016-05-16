@@ -6,9 +6,13 @@
 package escape.from.insanity.island;
 
 import byui.cit260.escapeFromInsanityIsland.model.Game;
+import byui.cit260.escapeFromInsanityIsland.model.Ground;
 import byui.cit260.escapeFromInsanityIsland.model.Location;
+import byui.cit260.escapeFromInsanityIsland.model.Map;
 import byui.cit260.escapeFromInsanityIsland.model.Player;
 import byui.cit260.escapeFromInsanityIsland.model.Resources;
+import byui.cit260.escapeFromInsanityIsland.model.Scene;
+import jdk.management.resource.ResourceType;
 
 /**
  *
@@ -47,6 +51,44 @@ public class EscapeFromInsanityIsland {
         
         String locationInfo = locationOne.toString();
         System.out.println(locationInfo);
+        
+        Scene sceneOne = new Scene();
+        
+        sceneOne.setDescription("this the scene of the game");
+        sceneOne.setTimeTravelled(15.00);
+        sceneOne.setBlockedLocation("blocked");
+        sceneOne.setDisplaySymbol("crest, stop");
+        sceneOne.setNoOfItems(9);
+        sceneOne.setWeather(true);
+        
+        String sceneInfo = sceneOne.toString();
+        System.out.println(sceneInfo);
+        
+        Map mapOne = new Map();
+        
+        mapOne.setRowCount(8);
+        mapOne.setColumnCount(9);
+        
+        String mapInfo = mapOne.toString();
+        System.out.println(mapInfo);
+        
+        Ground groundOne = new Ground();
+        
+        groundOne.setFootPatterns("animal and human food steps");
+        groundOne.setBentFoliage("bent grass");
+        
+        String groundInfo =groundOne.toString();
+        System.out.println(groundInfo);
+        
+        Resources resourcesOne = new Resources();
+        
+        resourcesOne.setDescription("these are the rest to help you complete the game");
+        resourcesOne.setResource("sword,knife,shild,arrow,bow etc.");
+        
+        
+        
+        
+        
         
         
         
