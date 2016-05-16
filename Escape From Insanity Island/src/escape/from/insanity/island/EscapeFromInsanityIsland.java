@@ -6,6 +6,7 @@
 package escape.from.insanity.island;
 
 import byui.cit260.escapeFromInsanityIsland.model.Game;
+import byui.cit260.escapeFromInsanityIsland.model.Location;
 import byui.cit260.escapeFromInsanityIsland.model.Player;
 import byui.cit260.escapeFromInsanityIsland.model.Resources;
 
@@ -36,6 +37,17 @@ public class EscapeFromInsanityIsland {
         
         String gameInfo = gameOne.toString();
         System.out.println(gameInfo);
+        
+        Location locationOne = new Location();
+                
+        locationOne.setRow(4);
+        locationOne.setColumn(4);
+        locationOne.setVisited(true);
+        locationOne.setAmountRemaining(5);
+        
+        String locationInfo = locationOne.toString();
+        System.out.println(locationInfo);
+        
         
         
     }

@@ -14,32 +14,36 @@ import java.util.Objects;
 public class Location implements Serializable {
     
     // class instance variable
-    private Boolean row;
-    private Boolean column;
-    private String visited;
+    private double row;
+    private double column;
+    private boolean visited;
     private double amountRemaining;
 
-    public Boolean getRow() {
+    public Location() {
+    }
+
+    
+    public double getRow() {
         return row;
     }
 
-    public void setRow(Boolean row) {
+    public void setRow(double row) {
         this.row = row;
     }
 
-    public Boolean getColumn() {
+    public double getColumn() {
         return column;
     }
 
-    public void setColumn(Boolean column) {
+    public void setColumn(double column) {
         this.column = column;
     }
 
-    public String getVisited() {
+    public boolean isVisited() {
         return visited;
     }
 
-    public void setVisited(String visited) {
+    public void setVisited(boolean visited) {
         this.visited = visited;
     }
 
@@ -51,16 +55,13 @@ public class Location implements Serializable {
         this.amountRemaining = amountRemaining;
     }
 
-    public Location() {
-    }
-
     @Override
     public int hashCode() {
-        int hash = 7;
-        hash = 17 * hash + Objects.hashCode(this.row);
-        hash = 17 * hash + Objects.hashCode(this.column);
-        hash = 17 * hash + Objects.hashCode(this.visited);
-        hash = 17 * hash + (int) (Double.doubleToLongBits(this.amountRemaining) ^ (Double.doubleToLongBits(this.amountRemaining) >>> 32));
+        int hash = 3;
+        hash = 89 * hash + (int) (Double.doubleToLongBits(this.row) ^ (Double.doubleToLongBits(this.row) >>> 32));
+        hash = 89 * hash + (int) (Double.doubleToLongBits(this.column) ^ (Double.doubleToLongBits(this.column) >>> 32));
+        hash = 89 * hash + (this.visited ? 1 : 0);
+        hash = 89 * hash + (int) (Double.doubleToLongBits(this.amountRemaining) ^ (Double.doubleToLongBits(this.amountRemaining) >>> 32));
         return hash;
     }
 
@@ -76,16 +77,16 @@ public class Location implements Serializable {
             return false;
         }
         final Location other = (Location) obj;
+        if (Double.doubleToLongBits(this.row) != Double.doubleToLongBits(other.row)) {
+            return false;
+        }
+        if (Double.doubleToLongBits(this.column) != Double.doubleToLongBits(other.column)) {
+            return false;
+        }
+        if (this.visited != other.visited) {
+            return false;
+        }
         if (Double.doubleToLongBits(this.amountRemaining) != Double.doubleToLongBits(other.amountRemaining)) {
-            return false;
-        }
-        if (!Objects.equals(this.visited, other.visited)) {
-            return false;
-        }
-        if (!Objects.equals(this.row, other.row)) {
-            return false;
-        }
-        if (!Objects.equals(this.column, other.column)) {
             return false;
         }
         return true;
