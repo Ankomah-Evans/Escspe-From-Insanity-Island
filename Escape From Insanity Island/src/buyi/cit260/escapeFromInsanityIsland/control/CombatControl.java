@@ -13,14 +13,18 @@ import java.util.Random;
  */
 public class CombatControl {
     public static int attack(int min, int max, int defense, int health) {
-        if (min > max) {return -1;}
+        if (min > max) {
+                return -1;
+        }
         int power = random(min, max);
         
-        if (power < 0 || power > 70) {return -1;}
-        if (power > (health+defense)) {
-            return 0;
+        if (power < 0 || power > 70) {
+                return -1;
         }
-        else if (power<defense) {
+        if (power > (health + defense)) {
+                return 0;
+        }
+        else if (power < defense) {
             return health;
         }
         else {
@@ -32,22 +36,56 @@ public class CombatControl {
 
     
     public static int random(int min, int max) {
-        if (min > max) {return -1;}
-        if ((min < 0 || min > 85) || (max < 0 || max > 85)) {return -1;}
-        Random rand = new Random();
-        int randomNum = rand.nextInt((max - min) + 1) + min;
+        if (min > max) {
+                return -1;
+        }
+        if ((min < 0 || min > 85) || (max < 0 || max > 85)) {
+                return -1;
+        }
         
+        Random rand = new Random();
+        
+        int randomNum = rand.nextInt((max - min) + 1) + min;
         return randomNum;
     }
+
+    
     public static int useHeal (int health, int itemAmount, int healAmount) {
-        if (health < 1 || health > 85) {return -1;}
-        if (itemAmount<=0) {return health;}
-        else if (health > (85-healAmount) || health > 200) {return health = 85;}
-        else { health += healAmount; 
+        if (health < 1 || health > 85) {
+                return -1;
+        }        
+        if (itemAmount <= 0) {
+                return health;
+        }
+        else if (health > (85 - healAmount) || health > 200) {
+                return health;
+        }
+        else {
+            health += healAmount;
         return health;
+        }
     }
+        
+    
+    public static int flee (int min, int max, int defense, int chance) {
+        if (min > max) {
+                return -1;
+        }
+        int escape = random(min, max);
+        
+        if (escape < 0 || escape > 70) {
+                return -1;
+        }
+        if (escape > (chance + defense)) {
+            return 0;
+        }
+        else if (escape < defense) {
+            return chance;
+        }
+        else {
+            chance = (defense + chance) - escape;
+            return chance;
+        }
+    }       
     
 }
-    
-        
-
