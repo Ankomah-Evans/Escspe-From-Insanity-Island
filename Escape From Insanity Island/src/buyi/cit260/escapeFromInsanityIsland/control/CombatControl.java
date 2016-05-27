@@ -12,29 +12,22 @@ import java.util.Random;
  * @author user
  */
 public class CombatControl {
-    public static int attack(int min, int max, int defense, int health) {
-        if (min > max) {
-                return -1;
+    
+    public static int attack(int strength , int defense) {
+        if (strength < 5 || strength > 20) {
+            return -1;
         }
-        int power = random(min, max);
         
-        if (power < 0 || power > 70) {
-                return -1;
+        if (defense <5) {
+            return -1;
         }
-        if (power > (health + defense)) {
-                return 0;
-        }
-        else if (power < defense) {
-            return health;
-        }
-        else {
-        health = (defense + health) - power;   
-
-        return health;
-        }
+        
+        int healthReturned = strength * defense;
+        
+        return healthReturned; 
     }
 
-    
+
     public static int random(int min, int max) {
         if (min > max) {
                 return -1;
