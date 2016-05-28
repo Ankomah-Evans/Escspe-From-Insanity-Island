@@ -5,26 +5,24 @@
  */
 package buyi.cit260.escapeFromInsanityIsland.control;
 
-import java.util.Random;
-
 /**
  *
  * @author user
  */
-public class CombatControl {
-    
-    public static int attack(int strength , int defense) {
-        if (strength < 5 || strength > 20) {
+public class sizeOfArrow {
+    public static int arrow(int length , int width) {
+        if (length < 10 || length > 45) {
+            return -1;
+        }        
+            
+        if (width <4 || width > 20) {
             return -1;
         }
         
-        if (defense <5) {
-            return -1;
-        }
         
-        int healthReturned = strength * defense;
+        int sizeOfArrow = length * width;
         
-        return healthReturned; 
+        return sizeOfArrow; 
     }       
     
 }
