@@ -12,7 +12,7 @@ import byui.cit260.escapeFromInsanityIsland.model.Map;
 import byui.cit260.escapeFromInsanityIsland.model.Player;
 import byui.cit260.escapeFromInsanityIsland.model.Resources;
 import byui.cit260.escapeFromInsanityIsland.model.Scene;
-import jdk.management.resource.ResourceType;
+// import jdk.management.resource.ResourceType;
 
 /**
  *
