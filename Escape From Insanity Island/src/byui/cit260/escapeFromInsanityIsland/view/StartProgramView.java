@@ -46,6 +46,7 @@ public class StartProgramView {
                +"\n* were found, or the user can choose to join the local *"
                +"\n* tribe. A winning message and picture will be         *"
                +"\n* displayed to the user.                               *"
+               +"\n********************************************************"
                );
                
     }
@@ -114,7 +115,7 @@ public class StartProgramView {
             return false;    
         }
         // display next view
-        this.displayNextView();
+        this.displayNextView(player);
         
         return true; // success!
     }
