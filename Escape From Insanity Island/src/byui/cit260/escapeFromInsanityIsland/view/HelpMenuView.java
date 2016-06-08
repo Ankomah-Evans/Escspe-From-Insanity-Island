@@ -11,27 +11,27 @@ import java.util.Scanner;
  *
  * @author user
  */
-public class GameMenuView {
-
-    private String promptMessage;
+public class HelpMenuView {
+    
     private String menu;
-    public GameMenuView() {
+    
+    public HelpMenuView(){
         this.menu = "\n"
                   + "\n---------------------------------------"
-                  + "\n| Game Menu                          |"
+                  + "\n| Help Menu                          |"
                   + "\n---------------------------------------"
-                  + "\nC - Cunfused"
-                  + "\nA - Angry"
-                  + "\nW - Worried"
-                  + "\nH - Happy"
+                  + "\nG - What is the Goal of the game?"
+                  + "\nM - How to Move"
+                  + "\nT - How to use the Tools you have"
+                  + "\nV - View Map"
+                  + "\nA - Avoiding traps/Beasts"
                   + "\nQ - Quit"
                   + "\n---------------------------------------";
         
-        this.promptMessage = "Enter in you current mood";
-    }
-    
-  public void displayMenu() {
-      boolean done = false; // set flag to not done
+         }
+
+   public void displayHelpMenuView() {
+       boolean done = false; // set flag to not done
         do{
             //prompt for and get players name
             String menuOption = this.getMenuOption();
@@ -50,7 +50,6 @@ public class GameMenuView {
      
      while (!valid){ // loop while an invalid value is enter
          System.out.println("\n" + this.menu);
-         System.out.println("\n" + this.promptMessage);
          
          value = Keyboard.nextLine(); // get next line typed on keyboard
          value = value. trim(); // trim off leading and trailing blanks
@@ -62,51 +61,53 @@ public class GameMenuView {
          break; // end the loop
     }
     return value;
-        
     }
 
     private boolean doAction(String menuOption) {
-        menuOption = menuOption.toUpperCase();
-         switch (menuOption){
-            case "C":
-                 this.confusedInventory();
-                 break;
+         menuOption = menuOption.toUpperCase();
+        
+        switch (menuOption){
+            case "G":
+                this.goalOfTheGame();
+                break;
+            case "M":
+                this.howToMove();
+                break;
+            case "T":
+                this.howToUseTools();
+                break;
+            case "V":
+                this.viewMap();
+                break;
             case "A":
-                this.angryInventory();
-                break;
-            case "W":
-                this.worriedInventory();
-                break;
-            case "H":
-                this.happyInventory();
+                this.howToAvoidObstacles();
                 break;
             default:
-                System.out.println("***Invalid Selection*** Try again");
+                System.out.println("*** Invalid selection *** Try again");
                 break;
-         }
-       return false; 
+        }
+        
+        return false;
     }
 
-    private void confusedInventory() {
-        InventoryControlView inventoryControlView = new InventoryControlView();
-        inventoryControlView.displayInventoryControlView();
+    private void goalOfTheGame() {
+        System.out.println("*** goalOfTheGame stub function called***");
     }
 
-    private void angryInventory() {
-        InventoryControlView inventoryControlView = new InventoryControlView();
-        inventoryControlView.displayInventoryControlView(); 
+    private void howToMove() {
+        System.out.println("*** howToMove stub function called***");
     }
 
-    private void worriedInventory() {
-        InventoryControlView inventoryControlView = new InventoryControlView();
-        inventoryControlView.displayInventoryControlView();
+    private void howToUseTools() {
+        System.out.println("*** howToUseTools stub function called***");
     }
 
-    private void happyInventory() {
-        InventoryControlView inventoryControlView = new InventoryControlView();
-        inventoryControlView.displayInventoryControlView();
+    private void viewMap() {
+        System.out.println("*** viewMap stub function called***");
     }
 
-
+    private void howToAvoidObstacles() {
+        System.out.println("*** howToAvoidObstacles stub function called***");
+    }
     
 }
