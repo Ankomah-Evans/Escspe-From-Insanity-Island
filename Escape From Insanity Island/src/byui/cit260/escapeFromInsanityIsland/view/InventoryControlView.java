@@ -5,6 +5,9 @@
  */
 package byui.cit260.escapeFromInsanityIsland.view;
 
+import buyi.cit260.escapeFromInsanityIsland.control.sizeOfArrow;
+import escape.from.insanity.island.EscapeFromInsanityIsland;
+
 /**
  *
  * @author user
@@ -16,7 +19,14 @@ public class InventoryControlView {
 
   public  void displayInventoryControlView() {
       
-      System.out.println("Stub function called");
+      //  create a new arrow
+      int value = sizeOfArrow.createNewArrow(EscapeFromInsanityIsland.getArrow());
+      if ( value < 10 && value <4){
+          System.out.println();
+      }
+      // display inventory control
+      InventoryControlView inventoryControlView = new InventoryControlView();
+        inventoryControlView.displayInventoryControlView();
         
     }
     
