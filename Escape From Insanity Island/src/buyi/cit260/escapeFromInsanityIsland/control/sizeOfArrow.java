@@ -5,6 +5,8 @@
  */
 package buyi.cit260.escapeFromInsanityIsland.control;
 
+import byui.cit260.escapeFromInsanityIsland.model.Player;
+
 /**
  *
  * @author user
@@ -24,5 +26,9 @@ public class sizeOfArrow {
         
         return sizeOfArrow; 
     }       
+
+    public static int createNewArrow(Player player) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }
