@@ -25,7 +25,9 @@ public class MainMenuView {
                   + "\nH - Get help on how to play the game"
                   + "\nS - Save game"
                   + "\nQ - Quit"
-                  + "\n---------------------------------------";
+                  + "\n---------------------------------------"
+                  + "\nB - Battle"
+                  + "\nC - Construct";
     }
     
     public void displayMainMenuView() {
@@ -76,6 +78,12 @@ public class MainMenuView {
             case "S":
                 this.saveGame();
                 break;
+            case "B":
+                this.battleMode();
+                break;    
+            case "C":
+                this.craftMode();
+                break;                
             default:
                 System.out.println("\n*** Invalid selection *** Try again");
                 break;
@@ -105,5 +113,15 @@ public class MainMenuView {
 
     private void saveGame() {
         System.out.println("*** saveGame function called***");
+    }
+
+    private void battleMode() {
+        CombatControlView combatControlView = new CombatControlView();
+        combatControlView.combatInput();
+    }    
+    
+    private void craftMode() {
+        ConstructionMenuView constructionMenuView = new ConstructionMenuView();
+        constructionMenuView.craftingMenu();
     }
 }
