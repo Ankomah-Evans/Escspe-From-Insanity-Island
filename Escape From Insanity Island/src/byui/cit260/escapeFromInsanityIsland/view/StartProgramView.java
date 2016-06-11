@@ -17,7 +17,7 @@ public class StartProgramView {
     
     private String promptMessage;
     public StartProgramView() {
-        this.promptMessage = "nPlease enter your name:";
+        this.promptMessage = "Please enter your name:";
         // display the banner when this is created
         this.displayBanner();
     }
