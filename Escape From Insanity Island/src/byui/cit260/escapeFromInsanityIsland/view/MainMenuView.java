@@ -7,16 +7,15 @@ package byui.cit260.escapeFromInsanityIsland.view;
 
 import buyi.cit260.escapeFromInsanityIsland.control.GameControl;
 import escape.from.insanity.island.EscapeFromInsanityIsland;
-import java.util.Scanner;
 
 /**
  *
  * @author user
  */
-public class MainMenuView {
+public class MainMenuView extends View {
 
     public MainMenuView() {
-        this.menu = "\n"
+            super("\n"
                   + "\n---------------------------------------"
                   + "\n| Main Menu                           |"
                   + "\n---------------------------------------"
@@ -27,45 +26,14 @@ public class MainMenuView {
                   + "\nQ - Quit"
                   + "\n---------------------------------------"
                   + "\nB - Battle"
-                  + "\nC - Construct";
+                  + "\nC - Construct");                    
     }
-    
-    public void displayMainMenuView() {
-        boolean done = false; // set flag to not done
-        do{
-            //prompt for and get players name
-            String menuOption = this.getMenuOption();
-            if (menuOption.toUpperCase().equals("Q") )// user wants to quit)
-                        return; // exist the game
-            
-            // do the requested action and display the next view
-            done = this. doAction(menuOption);
-        } while (!done);   
-        }
-
-      private String getMenuOption() {
-         Scanner Keyboard = new Scanner (System.in); // get infile for keyboard
-     String value = ""; // value to be returned
-     boolean valid = false; // initialize to not valid
-     
-     while (!valid){ // loop while an invalid value is enter
-         System.out.println("\n" + this.menu);
-         
-         value = Keyboard.nextLine(); // get next line typed on keyboard
-         value = value. trim(); // trim off leading and trailing blanks
-         
-         if (value.length()< 1) { // value is blank
-             System.out.println("\nInvalid value: value can not be blank");
-             continue;    
-         }
-         break; // end the loop
-    }
-    return value;
-    } 
-    private boolean doAction (String menuOption){
-        menuOption = menuOption.toUpperCase();
+   
+    @Override
+    public boolean doAction (String value){
+        value = value.toUpperCase();
         
-        switch (menuOption){
+        switch (value){
             case "N": 
                 this.startNewGame();
                 break;
@@ -98,7 +66,7 @@ public class MainMenuView {
         GameControl.createNewGame(EscapeFromInsanityIsland.getPlayer());
    
         GameMenuView gameMenu = new GameMenuView();
-        gameMenu.displayMenu();
+        gameMenu.display();
     }
 
     private void startExistingGame() {
@@ -108,7 +76,7 @@ public class MainMenuView {
     private void displayHelpMenu() {
         
         HelpMenuView helpMenuView = new HelpMenuView();
-        helpMenuView.displayHelpMenuView();
+        helpMenuView.display();
     }
 
     private void saveGame() {
@@ -117,11 +85,11 @@ public class MainMenuView {
 
     private void battleMode() {
         CombatControlView combatControlView = new CombatControlView();
-        combatControlView.combatInput();
+        combatControlView.display();
     }    
     
     private void craftMode() {
         ConstructionMenuView constructionMenuView = new ConstructionMenuView();
-        constructionMenuView.craftingMenu();
+        constructionMenuView.display();
     }
 }

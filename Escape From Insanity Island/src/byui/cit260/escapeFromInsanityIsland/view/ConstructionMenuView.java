@@ -10,13 +10,11 @@ import java.util.Scanner;
  *
  * @author StarrfoxxW8
  */
-public class ConstructionMenuView {
-	
-	private String menu;
+public class ConstructionMenuView extends View {
 
     public ConstructionMenuView() {
 		
-        this.menu =   "\n---------------------------------------"
+                super("\n---------------------------------------"
                     + "\n|          Construction Menu          |"
                     + "\n---------------------------------------"
                     + "\n|                                     |"
@@ -26,54 +24,14 @@ public class ConstructionMenuView {
                     + "\n| I - Craft Items                     |"
                     + "\n| X - Exit Menu                       |"
                     + "\n|                                     |"							
-                    + "\n---------------------------------------";
+                    + "\n---------------------------------------");
     }
     
-    public void craftingMenu() {
-		
-        boolean done = false; // set flag to not done
-        do{
-            //display Construction Menu and wait for user to select an option
-            String menuOption = this.getUserInput();
-            if (menuOption.toUpperCase().equals("Q") )// user wants to exit the menu)
-                        return; // exit the menu
-            
-            // do the requested action and display the next view
-            done = this.doAction(menuOption);
-        } while (!done);   
-        }
-
-    private String getUserInput() {
-		
-        Scanner Keyboard = new Scanner (System.in);
-		String selection = "";		
-		boolean valid = false;
-		
-		// loop until a valid option has been selected
-		while (!valid){ 
-			System.out.println("\n" + this.menu);
-			 
-			// get the selection the user inputted from the keyboard
-			selection = Keyboard.nextLine();
-			selection = selection.trim();
-			 
-			if (selection.length()< 1) { // nothing is entered
-				System.out.println("\nWhat game are you playing? Try typing a key and THEN pressing the Enter key");
-				continue;    
-			}
-			
-			break; // end the loop
-		}
-		
-		return selection; // return the user's selection
-    }
-
-	
-    private boolean doAction (String choice){
-		
-		choice = choice.toUpperCase(); // convert choice to upper case
+    @Override
+    public boolean doAction (String value){		
+		value = value.toUpperCase(); // convert choice to upper case
         
-        switch (choice){
+        switch (value){
             case "T": 
                 this.startCraftTool();
                 break;

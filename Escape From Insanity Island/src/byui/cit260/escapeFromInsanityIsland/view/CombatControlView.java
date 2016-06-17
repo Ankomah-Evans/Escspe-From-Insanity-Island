@@ -10,53 +10,44 @@ import java.util.Scanner;
  *
  * @author StarrfoxxW8
  */
-public class CombatControlView {
+public class CombatControlView extends View {
+
+    public CombatControlView() {
 		
-    public String combatInput() {
-		
-        Scanner Keyboard = new Scanner (System.in);
-		String selection = "";		
-		boolean valid = false;
-		
-		// loop until a valid option has been selected
-		while (!valid){ 
-			System.out.println("\nYou have entered a battle!");
-			 
-			// get the selection the user inputted from the keyboard
-			selection = Keyboard.nextLine();
-			selection = selection.trim();
-			 
-			if (selection.length()< 1) { // nothing is entered
-				System.out.println("\nLiving life dangerously, eh? You might want to decide what to do before that beast tears you apart.");
-                                this.doAction();                                       
-				continue;    
-			}
-			
-			break; // end the loop
-		}
-		
-		return selection; // return the user's selection
+            super("\nYou have entered a battle!");
     }
+    
+    @Override
 
-
-    private String doAction (){
-		
-		String battleChoice = null;
-		if (battleChoice.toUpperCase().equals("A")) // user attacks
-			return "You attack!";
+    public boolean doAction (String value){
+		value = value.toUpperCase();
                 
-                else if (battleChoice.toUpperCase().equals("H")) // user heals
-                        return "You flee like a yellow-bellied coward.";
-			
-		else if (battleChoice.toUpperCase().equals("F")) // user flees battle
-			return "You flee like a yellow-bellied coward.";
-			
-		else
-			return "Well, that didn't do anything. Maybe you should go back and read the instructions.";
-		
+        switch (value){
+            case "A": 
+                this.attack();
+                break;
+            case "H":
+                this.heal();
+                break;
+            case "F":
+                this.flee();
+                break;  
+            default:
+                System.out.println("\n*** Invalid selection *** Try again");
+                break;
+        }
+        return false;     
     }
 
-    void display() {
-        System.out.println("\n*** display() called ***");
+    private void attack() {
+        System.out.println("\n*** You attack! ***");
     }
-}    
+
+    private void heal() {
+        System.out.println("\n*** You heal thyself. ***");
+    }
+
+    private void flee() {
+        System.out.println("\n*** You flee like a coward! ***");
+    }
+}

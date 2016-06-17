@@ -11,63 +11,27 @@ import java.util.Scanner;
  *
  * @author user
  */
-public class GameMenuView {
+public class GameMenuView extends View {
 
-    private String promptMessage;
-    private String menu;
     public GameMenuView() {
-        this.menu = "\n"
+            super("\n"
                   + "\n---------------------------------------"
-                  + "\n| Game Menu                          |"
+                  + "\n    Enter Your Mood!"
                   + "\n---------------------------------------"
                   + "\nC - Cunfused"
                   + "\nA - Angry"
                   + "\nW - Worried"
                   + "\nH - Happy"
                   + "\nQ - Quit"
-                  + "\n---------------------------------------";
+                  + "\n---------------------------------------");
         
-        this.promptMessage = "Enter in you current mood";
     }
     
-  public void displayMenu() {
-      boolean done = false; // set flag to not done
-        do{
-            //prompt for and get players name
-            String menuOption = this.getMenuOption();
-            if (menuOption.toUpperCase().equals("Q") )// user wants to quit)
-                        return; // exist the game
-            
-            // do the requested action and display the next view
-            done = this. doAction(menuOption);
-        } while (!done);   
-        }
+    @Override
 
-      private String getMenuOption() {
-         Scanner Keyboard = new Scanner (System.in); // get infile for keyboard
-     String value = ""; // value to be returned
-     boolean valid = false; // initialize to not valid
-     
-     while (!valid){ // loop while an invalid value is enter
-         System.out.println("\n" + this.menu);
-         System.out.println("\n" + this.promptMessage);
-         
-         value = Keyboard.nextLine(); // get next line typed on keyboard
-         value = value. trim(); // trim off leading and trailing blanks
-         
-         if (value.length()< 1) { // value is blank
-             System.out.println("\nInvalid value: value can not be blank");
-             continue;    
-         }
-         break; // end the loop
-    }
-    return value;
-        
-    }
-
-    private boolean doAction(String menuOption) {
-        menuOption = menuOption.toUpperCase();
-         switch (menuOption){
+    public boolean doAction(String value) {
+        value = value.toUpperCase();
+         switch (value){
             case "C":
                  this.confusedInventory();
                  break;
@@ -81,32 +45,38 @@ public class GameMenuView {
                 this.happyInventory();
                 break;
             default:
-                System.out.println("***Invalid Selection*** Try again");
+                System.out.println("*** That's an emotion I don't understand. Try another one. ***");
                 break;
          }
        return false; 
     }
 
     private void confusedInventory() {
+        
+                System.out.println("\n*** confusedInvetory() called ***");
         InventoryControlView inventoryControlView = new InventoryControlView();
         inventoryControlView.displayInventoryControlView();
     }
 
     private void angryInventory() {
+        
+                System.out.println("\n*** angryInventory() called ***");
         InventoryControlView inventoryControlView = new InventoryControlView();
         inventoryControlView.displayInventoryControlView(); 
     }
 
     private void worriedInventory() {
+        
+                System.out.println("\n*** worriedInventory() called ***");
         InventoryControlView inventoryControlView = new InventoryControlView();
         inventoryControlView.displayInventoryControlView();
     }
 
     private void happyInventory() {
+        
+                System.out.println("\n*** happyInventory() called ***");
         InventoryControlView inventoryControlView = new InventoryControlView();
         inventoryControlView.displayInventoryControlView();
     }
-
-
     
 }

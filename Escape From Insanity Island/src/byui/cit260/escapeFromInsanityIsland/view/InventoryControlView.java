@@ -31,7 +31,7 @@ public class InventoryControlView {
 			selection = selection.trim();
 			 
 			if (selection.length()< 1) { // nothing is entered
-				System.out.println("\nMake a selection to get the weapon for you mood");
+				System.out.println("\nMake a selection to get the weapon for your mood");
                                 this.doAction();                                       
 				continue;    
 			}
