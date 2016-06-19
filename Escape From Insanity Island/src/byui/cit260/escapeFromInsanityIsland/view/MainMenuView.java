@@ -26,7 +26,8 @@ public class MainMenuView extends View {
                   + "\nQ - Quit"
                   + "\n---------------------------------------"
                   + "\nB - Battle"
-                  + "\nC - Construct");                    
+                  + "\nC - Construct" 
+                  + "\nM - Move");              
     }
    
     @Override
@@ -51,7 +52,10 @@ public class MainMenuView extends View {
                 break;    
             case "C":
                 this.craftMode();
-                break;                
+                break;  
+            case "M":
+                this.moveMode();
+                break;                  
             default:
                 System.out.println("\n*** Invalid selection *** Try again");
                 break;
@@ -92,4 +96,9 @@ public class MainMenuView extends View {
         ConstructionMenuView constructionMenuView = new ConstructionMenuView();
         constructionMenuView.display();
     }
+    
+    private void moveMode() {
+        MovementControlView movementControlView = new MovementControlView();
+        movementControlView.display();
+    }    
 }
