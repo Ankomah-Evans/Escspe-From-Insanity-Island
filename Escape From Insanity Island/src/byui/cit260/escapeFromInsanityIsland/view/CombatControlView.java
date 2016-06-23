@@ -14,7 +14,15 @@ public class CombatControlView extends View {
 
     public CombatControlView() {
 		
-            super("\nYou have entered a battle!");
+            super("\nYou have entered a battle!"
+                 +"\n----------------------------"
+                 +"\n|      Combat Menu         |"
+                 +"\n----------------------------"
+                 +"\nA - Attact"
+                 +"\nH - Heal"
+                 +"\nF - Flee"
+                 +"\nQ - quit"
+                 +"\n----------------------------");
     }
     
     @Override
