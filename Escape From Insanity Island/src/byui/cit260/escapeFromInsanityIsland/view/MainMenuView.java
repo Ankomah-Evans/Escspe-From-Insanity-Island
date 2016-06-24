@@ -6,7 +6,7 @@
 package byui.cit260.escapeFromInsanityIsland.view;
 
 import buyi.cit260.escapeFromInsanityIsland.control.GameControl;
-import buyi.cit260.escapeFromInsanityIsland.control.Player;
+import byui.cit260.escapeFromInsanityIsland.model.Player;
 
 
 /**
@@ -72,6 +72,8 @@ public class MainMenuView extends View {
    
         GameMenuView gameMenu = new GameMenuView();
         gameMenu.display();
+        //THIS IS WHERE YOU WILL MAKE THE CALL TO GO TO THE VIEW FOR THE 
+        //STARTING LOCATION FOR THE USER
     }
 
     private void startExistingGame() {

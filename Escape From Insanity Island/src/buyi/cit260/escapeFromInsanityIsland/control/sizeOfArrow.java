@@ -12,7 +12,11 @@ import byui.cit260.escapeFromInsanityIsland.model.Player;
  * @author user
  */
 public class sizeOfArrow {
-    public static int arrow(int length , int width) {
+    
+    public sizeOfArrow () {        
+    }
+    
+    public int calculateArrowSize(int length , int width) {
         if (length < 10 || length > 45) {
             return -1;
         }        

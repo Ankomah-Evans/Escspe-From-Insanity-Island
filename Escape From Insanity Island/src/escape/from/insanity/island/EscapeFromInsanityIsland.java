@@ -44,10 +44,10 @@ public class EscapeFromInsanityIsland {
         
     }
 
-    public static Player getArrow() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
- 
+//    public static Player getArrow() {
+//        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+//    }
+// 
     
         
     }

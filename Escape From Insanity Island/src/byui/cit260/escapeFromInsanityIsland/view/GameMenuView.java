@@ -55,28 +55,28 @@ public class GameMenuView extends View {
         
                 System.out.println("\n*** confusedInvetory() called ***");
         InventoryControlView inventoryControlView = new InventoryControlView();
-        inventoryControlView.displayInventoryControlView();
+        inventoryControlView.display();
     }
 
     private void angryInventory() {
         
                 System.out.println("\n*** angryInventory() called ***");
         InventoryControlView inventoryControlView = new InventoryControlView();
-        inventoryControlView.displayInventoryControlView(); 
+        inventoryControlView.display(); 
     }
 
     private void worriedInventory() {
         
                 System.out.println("\n*** worriedInventory() called ***");
         InventoryControlView inventoryControlView = new InventoryControlView();
-        inventoryControlView.displayInventoryControlView();
+        inventoryControlView.display();
     }
 
     private void happyInventory() {
         
                 System.out.println("\n*** happyInventory() called ***");
         InventoryControlView inventoryControlView = new InventoryControlView();
-        inventoryControlView.displayInventoryControlView();
+        inventoryControlView.display();
     }
     
 }

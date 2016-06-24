@@ -68,5 +68,8 @@ public abstract class View implements ViewInterface {
         
         return value; //return the name
     }
+    public void setDisplayMessage(String message) {
+        this.displayMessage = message;
+    }
     
 }
