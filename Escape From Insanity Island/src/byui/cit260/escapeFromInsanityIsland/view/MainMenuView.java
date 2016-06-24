@@ -6,7 +6,8 @@
 package byui.cit260.escapeFromInsanityIsland.view;
 
 import buyi.cit260.escapeFromInsanityIsland.control.GameControl;
-import escape.from.insanity.island.EscapeFromInsanityIsland;
+import buyi.cit260.escapeFromInsanityIsland.control.Player;
+
 
 /**
  *
@@ -67,7 +68,7 @@ public class MainMenuView extends View {
         private String menu;
 
     private void startNewGame() {
-        GameControl.createNewGame(EscapeFromInsanityIsland.getPlayer());
+        GameControl.createNewGame(escapeFromInsanityIsland.getPlayer());
    
         GameMenuView gameMenu = new GameMenuView();
         gameMenu.display();
@@ -101,4 +102,14 @@ public class MainMenuView extends View {
         MovementControlView movementControlView = new MovementControlView();
         movementControlView.display();
     }    
+
+    private static class escapeFromInsanityIsland {
+
+        private static Player getPlayer() {
+            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        }
+
+        public escapeFromInsanityIsland() {
+        }
+    }
 }
