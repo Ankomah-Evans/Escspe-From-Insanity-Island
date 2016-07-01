@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package buyi.cit260.escapeFromInsanityIsland.control;
+package buyi.cit260.escapeFromInsanityIsland.model;
 
 /**
  *
@@ -11,7 +12,7 @@ package buyi.cit260.escapeFromInsanityIsland.control;
  */
 public class MoveController {
     
-    public boolean moveNorth (game game)
+    public boolean moveNorth (Game game)
             
             Character character = game.getCharacter();
             Location currentLocation = game.getCharacter().getLocation();

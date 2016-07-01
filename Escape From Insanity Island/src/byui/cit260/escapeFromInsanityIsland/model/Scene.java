@@ -121,5 +121,17 @@ public class Scene implements Serializable {
     public String toString() {
         return "Scene{" + "description=" + description + ", timeTravelled=" + timeTravelled + ", blockedLocation=" + blockedLocation + ", displaySymbol=" + displaySymbol + ", noOfItems=" + noOfItems + ", weather=" + weather + '}';
     }
+
+    public void setMapSymbol(String _st_) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public void setBlocked(boolean b) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public void setTravelTime(int i) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }

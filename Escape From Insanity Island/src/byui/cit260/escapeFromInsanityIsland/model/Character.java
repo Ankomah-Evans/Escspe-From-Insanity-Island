@@ -22,6 +22,11 @@ public enum Character implements Serializable {
     private final String description;
     private final String type;
     private final String mood;
+    
+    // Arrays
+    
+    private Move[] moves = new Move[4];
+    private CombatAction[] combatAction = new CombatAction[4];
 
    Character(String description) {
             this.description = description;

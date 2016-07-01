@@ -16,6 +16,7 @@ public class Map implements Serializable {
     // class instance variable
     private double rowCount;
     private double columnCount;  
+    public double getEndDivder;
 
     public Map() {
     }
@@ -69,6 +70,10 @@ public class Map implements Serializable {
     @Override
     public String toString() {
         return "Map{" + "rowCount=" + rowCount + ", columnCount=" + columnCount + '}';
+    }
+
+    public Object getNumber() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
   

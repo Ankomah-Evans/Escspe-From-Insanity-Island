@@ -121,6 +121,14 @@ public class Item implements Serializable {
     public String toString() {
         return "Item{" + "name=" + name + ", description=" + description + ", damage=" + damage + ", protection=" + protection + ", healing=" + healing + ", create=" + create + '}';
     }
+
+    public Object getRequiredAmount() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public Object getQuantityInStock() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
     
     
