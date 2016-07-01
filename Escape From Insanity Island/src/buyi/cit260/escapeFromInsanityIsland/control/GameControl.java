@@ -74,7 +74,7 @@ public class GameControl {
               + "What are you going to do now?");
         startScene.setMapSymbol(" ST ");
         startScene.setBlocked(false);
-        startScene.setTravelTime(240);
+        startScene.setTravelTime(50);
         scenes[SceneType.start.ordinal()] = startScene;
         
         Scene forestScene = newScene();
@@ -83,7 +83,7 @@ public class GameControl {
               + "Now what?");
         forestScene.setMapSymbol(" ST ");
         forestScene.setBlocked(false);
-        forestScene.setTravelTime(240);
+        forestScene.setTravelTime(75);
         scenes[SceneType.start.ordinal()] = forestScene;
         
         Scene plainsScene = newScene();
@@ -101,7 +101,7 @@ public class GameControl {
               + "So, now what?");
         beachScene.setMapSymbol(" ST ");
         beachScene.setBlocked(false);
-        beachScene.setTravelTime(240);
+        beachScene.setTravelTime(20);
         scenes[SceneType.start.ordinal()] = beachScene;  
         
         Scene mountainsScene = newScene();
@@ -110,7 +110,7 @@ public class GameControl {
               + "You thought you heard something. What should you do?");
         mountainsScene.setMapSymbol(" ST ");
         mountainsScene.setBlocked(false);
-        mountainsScene.setTravelTime(140);
+        mountainsScene.setTravelTime(60);
         scenes[SceneType.start.ordinal()] = mountainsScene;        
         
         Scene dockScene = newScene();
@@ -119,7 +119,7 @@ public class GameControl {
               + "What are you waiting for?");
         dockScene.setMapSymbol(" ST ");
         dockScene.setBlocked(false);
-        dockScene.setTravelTime(240);
+        dockScene.setTravelTime(10);
         scenes[SceneType.start.ordinal()] = dockScene;       
         
         return scenes;
@@ -153,11 +153,18 @@ public class GameControl {
         dock;
     }
     
-    public static byui.cit260.escapeFromInsanityIsland.model.Player createPlayer(String playersName) {
-        System.out.println("*** createPlayer() function called in GameControl ***");
-        byui.cit260.escapeFromInsanityIsland.model.Player player = null;
+    public static Player createPlayer(String name) {
+        if (name == null) {
+            return null;
+        }
+        Player player = new Player();
+        player.setName(name);
+        
+        EscapeFromInsanityIsland.setPlayer(player); // save the player
+        
         return player;
     }
+    
 
     private static class InventoryItem {
 
