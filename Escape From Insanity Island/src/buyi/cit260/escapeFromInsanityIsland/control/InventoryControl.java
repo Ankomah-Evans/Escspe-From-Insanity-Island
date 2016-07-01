@@ -18,16 +18,16 @@ public class InventoryControl {
     
     public int totalArrow(int[] numbers){
          int total = 0;
-         InventoryControlView sum = new InventoryControlView();
-        boolean result = (boolean) sum.doAction(length);
-            for (int i = 0; i < numbers.length;)
-                if (result == true){
-                    
-                total += numbers[i];
-                }
-                else{
-                    break;
-                }
+//         InventoryControlView sum = new InventoryControlView();
+//          //  boolean result = (boolean) sum.doAction(length);
+//            for (int i = 0; i < numbers.length;)
+//                if (result == true){
+//                    
+//                total += numbers[i];
+//                }
+//                else{
+//                    break;
+//                }
             return total;
                 }
     

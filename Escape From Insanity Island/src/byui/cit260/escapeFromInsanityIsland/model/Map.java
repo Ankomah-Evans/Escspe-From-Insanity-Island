@@ -4,53 +4,93 @@
  * and open the template in the editor.
  */
 package byui.cit260.escapeFromInsanityIsland.model;
-
-import java.util.Objects;
+import java.io.Serializable;
+import java.util.ArrayList;
 
 /**
  *
  * @author user
  */
 public class Map implements Serializable {
-    
-    // class instance variable
-    private double rowCount;
-    private double columnCount;  
-    public double getEndDivder;
 
+    private int noOfRows;
+    private int noOfColumns;
+    private Location[][] locations;
+    private Scene scene;
+    private ArrayList<Character> characters;
+    
     public Map() {
     }
-
     
-    public double getRowCount() {
-        return rowCount;
+    public Map(int noOfRows, int noOfColumns) {
+        
+        if (noOfRows < 1 || noOfColumns < 1) {
+            System.out.println("The number of rows and columns must be > zero");
+            return;
+        }
+        
+        this.noOfRows = noOfRows;
+        this.noOfColumns = noOfColumns;
+        
+        // create 2-D array for Location objects
+        this.locations = new Location[noOfRows][noOfColumns];
+        
+        for (int row = 0; row < noOfRows; row++) {
+            for(int column = 0; column < noOfColumns; column++) {
+                // create and initialize new Location object instance
+                Location location = new Location();
+                location.setColumn(column);
+                location.setRow(row);
+                location.setVisited(false);
+                
+                // assign the Location object to the current position in array
+                locations[row][column] = location;          
+            }
+        }
     }
 
-    public void setRowCount(double rowCount) {
-        this.rowCount = rowCount;
+    public long getNoOfRows() {
+        return noOfRows;
     }
 
-    public double getColumnCount() {
-        return columnCount;
+    public void setNoOfRows(int noOfRows) {
+        this.noOfRows = noOfRows;
     }
 
-    public void setColumnCount(double columnCount) {
-        this.columnCount = columnCount;
+    public long getNoOfColumns() {
+        return noOfColumns;
+    }
+
+    public void setNoOfColumns(int noOfColumns) {
+        this.noOfColumns = noOfColumns;
+    }
+
+    public Location[][] getLocations() {
+        return locations;
+    }
+
+    public void setLocations(Location[][] locations) {
+        this.locations = locations;
+    }
+    
+    
+    
+
+    @Override
+    public String toString() {
+        return "Map{" + "rowCount=" + noOfRows + ", columnCount=" + noOfColumns + '}';
     }
 
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 47 * hash + (int) (Double.doubleToLongBits(this.rowCount) ^ (Double.doubleToLongBits(this.rowCount) >>> 32));
-        hash = 47 * hash + (int) (Double.doubleToLongBits(this.columnCount) ^ (Double.doubleToLongBits(this.columnCount) >>> 32));
+        hash = 37 * hash + (int) (this.noOfRows ^ (this.noOfRows >>> 32));
+        hash = 37 * hash + (int) (this.noOfColumns ^ (this.noOfColumns >>> 32));
         return hash;
     }
 
     @Override
     public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
         if (obj == null) {
             return false;
         }
@@ -58,24 +98,12 @@ public class Map implements Serializable {
             return false;
         }
         final Map other = (Map) obj;
-        if (Double.doubleToLongBits(this.rowCount) != Double.doubleToLongBits(other.rowCount)) {
+        if (this.noOfRows != other.noOfRows) {
             return false;
         }
-        if (Double.doubleToLongBits(this.columnCount) != Double.doubleToLongBits(other.columnCount)) {
+        if (this.noOfColumns != other.noOfColumns) {
             return false;
         }
         return true;
     }
-
-    @Override
-    public String toString() {
-        return "Map{" + "rowCount=" + rowCount + ", columnCount=" + columnCount + '}';
-    }
-
-    public Object getNumber() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-  
-    
 }

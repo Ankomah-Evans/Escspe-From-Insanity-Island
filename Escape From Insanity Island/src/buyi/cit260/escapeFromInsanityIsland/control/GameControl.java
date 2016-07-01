@@ -6,7 +6,10 @@
 package buyi.cit260.escapeFromInsanityIsland.control;
 
 import byui.cit260.escapeFromInsanityIsland.model.Game;
+import byui.cit260.escapeFromInsanityIsland.model.Player;
+import byui.cit260.escapeFromInsanityIsland.model.Map;
 import byui.cit260.escapeFromInsanityIsland.model.Scene;
+import byui.cit260.escapeFromInsanityIsland.model.Location;
 import escape.from.insanity.island.EscapeFromInsanityIsland;
 
 /**
@@ -62,7 +65,7 @@ public class GameControl {
     }
 
     
-    private static Scene[] createScenes() {
+    public static Scene[] createScenes() {
         Scene[] scenes = new Scene[SceneType.values().length];
         
         Scene startScene = newScene();
@@ -89,7 +92,7 @@ public class GameControl {
               + "What are you going to do now");
         plainsScene.setMapSymbol(" ST ");
         plainsScene.setBlocked(false);
-        plainsScene.setTravelTime(240);
+        plainsScene.setTravelTime(40);
         scenes[SceneType.start.ordinal()] = plainsScene;      
         
         Scene beachScene = newScene();
@@ -107,7 +110,7 @@ public class GameControl {
               + "You thought you heard something. What should you do?");
         mountainsScene.setMapSymbol(" ST ");
         mountainsScene.setBlocked(false);
-        mountainsScene.setTravelTime(240);
+        mountainsScene.setTravelTime(140);
         scenes[SceneType.start.ordinal()] = mountainsScene;        
         
         Scene dockScene = newScene();

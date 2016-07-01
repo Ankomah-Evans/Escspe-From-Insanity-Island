@@ -5,6 +5,8 @@
  */
 package buyi.cit260.escapeFromInsanityIsland.control;
 
+
+import byui.cit260.escapeFromInsanityIsland.model.Map;
 import byui.cit260.escapeFromInsanityIsland.model.Scene;
 
 /**

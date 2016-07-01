@@ -18,6 +18,15 @@ public class Location implements Serializable {
     private double column;
     private boolean visited;
     private double amountRemaining;
+    private Scene scene;
+
+    public Scene getScene() {
+        return scene;
+    }
+
+    public void setScene(Scene scene) {
+        this.scene = scene;
+    }
 
     public Location() {
     }
