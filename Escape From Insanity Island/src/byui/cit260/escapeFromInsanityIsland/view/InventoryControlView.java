@@ -6,6 +6,7 @@
 package byui.cit260.escapeFromInsanityIsland.view;
 
 import buyi.cit260.escapeFromInsanityIsland.control.sizeOfArrow;
+import byui.cit260.escapeFromInsanityIsland.exceptions.sizeOfArrowException;
 import java.util.Scanner;
 
 /**
@@ -26,19 +27,17 @@ public class InventoryControlView extends View {
         String width = this.getInput();
         
         sizeOfArrow soa = new sizeOfArrow();
-        int arrowSize = soa.calculateArrowSize(Integer.parseInt(length), Integer.parseInt(width));
-        if (arrowSize == -1 ) {
-            System.out.println("The length of the arrow must be between 10 and 45, and" +
-                               "\nThe width of the arrow must be between 4 and 20." +
-                               "\nPlease try again");
-            this.setDisplayMessage("\nHow long do you want the arrow?");
-            return false;
-        } else {
-            System.out.println("Congratulations! You created an arrow that is" +
-                               "\n " + arrowSize);
-            return true;
+        try {
+        soa.calculateArrowSize(Integer.parseInt(length), Integer.parseInt(width));
+        } catch (sizeOfArrowException me){
+            System.out.println(me.getMessage());
+            
         }
+            this.setDisplayMessage("\nHow long do you want the arrow?");
+          
         
+     
+        return true;
     }
 
     

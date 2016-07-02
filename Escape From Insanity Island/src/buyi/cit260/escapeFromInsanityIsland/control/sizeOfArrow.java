@@ -5,6 +5,7 @@
  */
 package buyi.cit260.escapeFromInsanityIsland.control;
 
+import byui.cit260.escapeFromInsanityIsland.exceptions.sizeOfArrowException;
 import byui.cit260.escapeFromInsanityIsland.model.Player;
 
 /**
@@ -13,16 +14,19 @@ import byui.cit260.escapeFromInsanityIsland.model.Player;
  */
 public class sizeOfArrow {
     
+    private String promptMessage = "createNewArrow stub function called";
     public sizeOfArrow () {        
     }
     
-    public int calculateArrowSize(int length , int width) {
+    public int calculateArrowSize(int length , int width) 
+             throws sizeOfArrowException {
+        
         if (length < 10 || length > 45) {
-            return -1;
+            throw new sizeOfArrowException ("Invlid Entry. Plese enter a value between 10 and 45");
         }        
             
         if (width <4 || width > 20) {
-            return -1;
+            throw new sizeOfArrowException ("Invlid Entry. Plese enter a value between 4 and 20");
         }
         
         
@@ -31,8 +35,12 @@ public class sizeOfArrow {
         return sizeOfArrow; 
     }       
 
-    public static int createNewArrow(Player player) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools Templates.
+    public int createNewArrow(Player player) 
+           throws sizeOfArrowException {
+        
+        System.out.println(promptMessage);
+        return Integer.parseInt(promptMessage);
+       
     }
     
 }
