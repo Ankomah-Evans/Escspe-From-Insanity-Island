@@ -25,7 +25,7 @@ public class StartProgramView {
     private void displayBanner() {
         System.out.println(
                 "\n********************************************************"
-               +"\n* This si the game of Escape from Insanity Island      *"
+               +"\n* This is the game of Escape from Insanity Island      *"
                +"\n* In the game, the character wakes up with no memory   *"
                +"\n* of who they are (other than name).                   *"
                +"\n* The only thing they know is what they currently see  *"
@@ -104,7 +104,7 @@ public class StartProgramView {
     private boolean doAction(String playersName) {
         if (playersName.length() < 2) {
             System.out.println("\nInvalid players name: "
-                    + "The name must be greater than one character in legth");
+                    + "The name must be greater than one character in length");
             return false;
         }
         // call createPlayer() control function

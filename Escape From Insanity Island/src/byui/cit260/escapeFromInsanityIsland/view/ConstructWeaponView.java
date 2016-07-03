@@ -10,7 +10,7 @@ import java.util.Scanner;
 
 /**
  *
- * @author user
+ * @author Starrfoxx W8
  */
 public class ConstructWeaponView extends View {
     
@@ -60,22 +60,22 @@ public class ConstructWeaponView extends View {
 
     public void createSpear() {
         ConstructionControl constructionControl = new ConstructionControl();
-        constructionControl.spearConstructionControl();
+        constructionControl.constructNewSpear();
     }
 
     private void createArrow() {
         ConstructionControl constructionControl = new ConstructionControl();
-        constructionControl.arrowConstructionControl();
+        constructionControl.constructNewArrow();
     }
 
     private void createShield() {
         ConstructionControl constructionControl = new ConstructionControl();
-        constructionControl.shieldConstructionControl();
+        constructionControl.constructNewShield();
     }
 
     private void createSword() {
         ConstructionControl constructionControl = new ConstructionControl();
-        constructionControl.swordConstructionControl();
+        constructionControl.constructNewSowrd();
     }
     
 }

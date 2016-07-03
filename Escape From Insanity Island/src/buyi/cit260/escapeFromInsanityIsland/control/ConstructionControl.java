@@ -5,26 +5,54 @@
  */
 package buyi.cit260.escapeFromInsanityIsland.control;
 
+import byui.cit260.escapeFromInsanityIsland.exceptions.constructNewSpearException;
+import byui.cit260.escapeFromInsanityIsland.view.View;
+
 /**
  *
- * @author user
+ * @author StarrfoxxW8
  */
 public class ConstructionControl {
 
-    public void spearConstructionControl() {
-        System.out.println("*** spearConstructionControl stub function called ***");
-    }
+  
+    public abstract class ConstructWeaponView extends View {
 
-    public void arrowConstructionControl() {
-        System.out.println("*** arrowConstructionControl stub function called ***");
-    }
+        public ConstructWeaponView() {
+            super("What would you like to construct?");
+        }
 
-    public void shieldConstructionControl() {
-        System.out.println("*** shieldConstructionControl stub function called ***");
-    }
+        public boolean doAction(String wood, String stone) {
 
-    public void swordConstructionControl() {
-        System.out.println("*** swordConstructionControl stub function called ***");
+            this.setDisplayMessage("Enter the amount of wood and stone to construct a spear.");
+
+            constructNewSpear newspear = new constructNewSpear();
+            try {
+                newspear.spearParts(Integer.parseInt(wood), Integer.parseInt(stone));
+            }
+                catch (constructNewSpearException me) {
+                    System.out.println(me.getMessage());
+                }
+
+            return true;
+        }
+   
+}
+    
+    
+    public void constructNewSpear() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
+    
+    public void constructNewArrow() {
+        System.out.println("*** constructNewArrow stub function called ***");
+    }
+
+    public void constructNewShield() {
+        System.out.println("*** constructNewShield stub function called ***");
+    }
+
+    public void constructNewSowrd() {
+        System.out.println("*** constructNewSowrd stub function called ***");
+    }
 }

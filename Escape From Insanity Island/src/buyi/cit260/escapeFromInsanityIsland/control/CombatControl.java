@@ -4,39 +4,51 @@
  * and open the template in the editor.
  */
 package buyi.cit260.escapeFromInsanityIsland.control;
+import byui.cit260.escapeFromInsanityIsland.exceptions.CombatControlException;
 
 /**
  *
  * @author StarrfoxxW8
  */
 public class CombatControl {
-        public int attackMob (int weapon, int damage, int defense, int health) {
+        public int attackMob (int weapon, int damage, int defense, int health) 
+                    throws CombatControlException {
+                       
+            
         if (weapon < 5 || weapon > 20) { // weapon strength added to damage
-            return -1;
+            throw new CombatControlException("Can not attack because the weapon is "
+                                           + "either too weak or strong than allowed.");
         }
         if (damage < 0 || damage > 36) { // amount of damage
-            return -1;
+            throw new CombatControlException("Damage must be within the constraints "
+                                           + "of the program.");
         }
         if (defense < 0 || defense > 20) { // amount of defense to subtract from damage and strength
-            return -1;
+            throw new CombatControlException("Defense must be within the constraints "
+                                           + "of the program.");
         }
         if (health < 0 || health > 100) { // amount of health of a mob
-            return -1;
+            throw new CombatControlException("Mob health cannot be under 0 or over 100.");
         }
         
         int newHealth = health - ((damage + weapon) - defense);
         return newHealth;
     }   
 	
-        public int selfHeal (int bandage, int health, int healAmt) {
+        public int selfHeal (int bandage, int health, int healAmt) 
+                            throws CombatControlException {
+            
         if (bandage < 1 || bandage > 20) { // amount of bandages (stack of 20 is the max)
-            return -1;
+            throw new CombatControlException("Bandage strength must be within"
+                                           + "the constraints of the program.");
         }
         if (health < 1 || health > 85) { // the current health of the player
-            return -1;
+            throw new CombatControlException("Player health cannot be less than 1"
+                                           + "or greater than 85.");
         }
         if (healAmt < 1 || healAmt > 15) { // amount of healing of the player
-            return -1;
+            throw new CombatControlException("Amount healed cannot be less than 1"
+                                           + "or greater than 15.");
         }
         
         int healedHealth = health + healAmt;

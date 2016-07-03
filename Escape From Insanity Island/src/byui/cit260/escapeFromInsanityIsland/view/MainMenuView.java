@@ -6,6 +6,7 @@
 package byui.cit260.escapeFromInsanityIsland.view;
 
 import buyi.cit260.escapeFromInsanityIsland.control.GameControl;
+import buyi.cit260.escapeFromInsanityIsland.control.SceneController;
 import byui.cit260.escapeFromInsanityIsland.model.Player;
 
 
@@ -28,7 +29,8 @@ public class MainMenuView extends View {
                   + "\n---------------------------------------"
                   + "\nB - Battle"
                   + "\nC - Construct" 
-                  + "\nM - Move");              
+                  + "\nM - Move"   
+                  + "\nL - Find location with longest travel time");              
     }
    
     @Override
@@ -56,7 +58,10 @@ public class MainMenuView extends View {
                 break;  
             case "M":
                 this.moveMode();
-                break;                  
+                break;     
+            case "L":
+                this.locationName();
+                break;      
             default:
                 System.out.println("\n*** Invalid selection *** Try again");
                 break;
@@ -104,6 +109,11 @@ public class MainMenuView extends View {
         MovementControlView movementControlView = new MovementControlView();
         movementControlView.display();
     }    
+
+    private void locationName() {
+        SceneController sceneController = new SceneController();
+        sceneController.display();
+    }
 
     private static class escapeFromInsanityIsland {
 
