@@ -7,13 +7,25 @@ package byui.cit260.escapeFromInsanityIsland.view;
 
 import buyi.cit260.escapeFromInsanityIsland.control.GameControl;
 import byui.cit260.escapeFromInsanityIsland.model.Player;
+import escape.from.insanity.island.EscapeFromInsanityIsland;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
  * @author StarrfoxxW8
  */
 public abstract class View implements ViewInterface {
+    
+    private String message;
+    
+    protected final BufferedReader keyboard = EscapeFromInsanityIsland.getInFile();
+    protected final PrintWriter console = EscapeFromInsanityIsland.getOutFile();
+    
     
     protected String displayMessage;
     
@@ -43,7 +55,7 @@ public abstract class View implements ViewInterface {
     @Override
     public String getInput() {
         
-        Scanner keyboard = new Scanner(System.in);
+        
         boolean valid = false;
         String value = null;
         
@@ -51,10 +63,14 @@ public abstract class View implements ViewInterface {
         while (!valid) {
             
             // prompt for the player's name
-            System.out.println("\n" + this.displayMessage);
+            this.console.println("\n" + this.displayMessage);
             
-            // get the value entered from the keyboard
-            value = keyboard.nextLine();
+            try {
+                // get the value entered from the keyboard
+                value = keyboard.readLine();
+            } catch (IOException ex) {
+                Logger.getLogger(View.class.getName()).log(Level.SEVERE, null, ex);
+            }
             value = value.trim();
             
             if (value.length() < 1) { // blank value entered

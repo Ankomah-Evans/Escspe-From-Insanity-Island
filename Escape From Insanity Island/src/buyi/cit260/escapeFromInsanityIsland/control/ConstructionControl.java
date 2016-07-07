@@ -30,7 +30,7 @@ public class ConstructionControl {
                 newspear.spearParts(Integer.parseInt(wood), Integer.parseInt(stone));
             }
                 catch (constructNewSpearException me) {
-                    System.out.println(me.getMessage());
+                    PrintWriter.println(me.getMessage());
                 }
 
             return true;
