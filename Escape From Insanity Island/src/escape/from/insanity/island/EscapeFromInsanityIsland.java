@@ -19,13 +19,73 @@ import java.util.logging.Logger;
  *
  * @ankomah
  */
+
 public class EscapeFromInsanityIsland {
     
     private static Game currentGame = null;
     private static Player player = null;
     
     private static PrintWriter outFile = null;
+    private static BufferedReader inFile = null;
+    
+    private static PrintWriter logFile = null;
+    
 
+    // Try...catch for BufferedReader Object
+    
+    public static void main(String[] args) {
+        
+        try {
+            
+            // open character stream files for end user input and output
+            EscapeFromInsanityIsland.inFile = 
+                    new BufferedReader(new InputStreamReader(System.in));
+            
+            EscapeFromInsanityIsland.outFile = new PrintWriter(System.out, true);
+            
+            // open log file
+            String filePath = "log.txt";
+            EscapeFromInsanityIsland.logFile = new PrintWriter(filePath);
+            
+            // create StartProgramView and start the program
+            StartProgramView startProgramView = new StartProgramView();
+            startProgramView.display();
+            return;
+            
+        } catch (Throwable e) {
+            
+                System.out.println("Exception: " + e.toString() +
+                                   "\nCause: " + e.getCause() +
+                                   "\nMessage: " + e.getMessage());
+                
+                e.printStackTrace();;
+        }
+        
+        finally {
+            
+            try {
+                
+                if (EscapeFromInsanityIsland.inFile != null)
+                    EscapeFromInsanityIsland.inFile.close();
+                
+                if (EscapeFromInsanityIsland.outFile != null)
+                    EscapeFromInsanityIsland.outFile.close();
+                
+                if (EscapeFromInsanityIsland.logFile != null)
+                    EscapeFromInsanityIsland.logFile.close();
+                             
+            } catch (IOException ex) {
+                System.out.println("Error closing files");
+                return;
+            }
+            
+        }
+    }
+    
+    
+    
+    // Getter and Setters
+    
     public static PrintWriter getOutFile() {
         return outFile;
     }
@@ -41,24 +101,6 @@ public class EscapeFromInsanityIsland {
     public static void setInFile(BufferedReader inFile) {
         EscapeFromInsanityIsland.inFile = inFile;
     }
-    private static BufferedReader inFile = null;
-
-    public static Game getCurrentGame() {
-        return currentGame;
-    }
-
-    public static void setCurrentGame(Game currentGame) {
-        EscapeFromInsanityIsland.currentGame = currentGame;
-    }
-
-    public static Player getPlayer() {
-        return player;
-    }
-
-    public static void setPlayer(Player player) {
-        EscapeFromInsanityIsland.player = player;
-    }
-    private static PrintWriter logFile = null;
 
     public static PrintWriter getLogFile() {
         return logFile;
@@ -68,53 +110,18 @@ public class EscapeFromInsanityIsland {
         EscapeFromInsanityIsland.logFile = logFile;
     }
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        
-        try {
-            
-        
-        // open character stream files for end user input and output
-        EscapeFromInsanityIsland.inFile =
-                new BufferedReader(new InputStreamReader(System.in));
-        EscapeFromInsanityIsland.outFile = new PrintWriter(System.out, true);
-        
-        // open log file
-        String filePath = "log.txt";
-        EscapeFromInsanityIsland.logFile = new PrintWriter(filePath);
-        } catch (Exception e){
-            System.out.println("Exception: " + e.toString()+
-                               "\nCause: " + e.getCause()+
-                               "\nMessage: " + e.getMessage());
-        }
-        
-        // create StartProgramView and start the program
-        StartProgramView startProgramView = new StartProgramView();
-        startProgramView.display();
-        return;
-        
-    } catch (Throwable e) {
-    
-            System.out.println("Exception: " + e.toString()+
-                              "nCause: " + e.getCause()+
-                              "nMessage: " + e.getMessage());
-            
-            e.printStackTrace();;
+    public static void setPlayer(Player player) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-              
-    finally {
-            try {
-                if (EscapeFromInsanityIsland.inFile != null)
-                    EscapeFromInsanityIsland.inFile.close();
-                if (EscapeFromInsanityIsland.outFile != null)
-                    EscapeFromInsanityIsland.outFile.close();
-                if (EscapeFromInsanityIsland.logFile != null)
-                    EscapeFromInsanityIsland.logFile.close();
-            } catch (IOException ex) {
-                System.out.println("Error closing files");
-            }
-       }
-}    
+
+    public static void setCurrentGame(Game game) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public static Game getCurrentGame() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    
+}
+        
 

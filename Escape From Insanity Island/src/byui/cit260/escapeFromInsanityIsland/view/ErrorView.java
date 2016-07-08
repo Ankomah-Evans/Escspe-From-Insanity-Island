@@ -5,23 +5,26 @@
  */
 package byui.cit260.escapeFromInsanityIsland.view;
 
+import escape.from.insanity.island.EscapeFromInsanityIsland;
+import java.io.PrintWriter;
+
 /**
  *
- * @author user
+ * @author StarrfoxxW8
  */
 public class ErrorView {
+    
     private static final PrintWriter errorFile = EscapeFromInsanityIsland.getOutFile();
-    private static final PrintWriter logfile = EscapeFromInsanityIsland.getLogFile();
+    private static final PrintWriter logFile = EscapeFromInsanityIsland.getLogFile();
     
-    public static void display(String className, String errorMessage){
-        
+    public static void display(String className, String errorMessage) {
+    
         errorFile.println(
-                    "-----------------------------------"
-                   +"\n- ERROR-" + errorMessage
-                   +"\n-------------------------------------");
-        // log error 
-        logFile.println(className +"-"+ errorMessage);
+                    "--------------------------------------------------"
+                +   "\n- ERROR - " + errorMessage
+                +   "\n---------------------------------------------------");
+        
+        // log error
+        logFile.println(className + " - " + errorMessage);
     }
-    
-    
 }

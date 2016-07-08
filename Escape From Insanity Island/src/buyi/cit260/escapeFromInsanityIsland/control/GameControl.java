@@ -11,6 +11,10 @@ import byui.cit260.escapeFromInsanityIsland.model.Map;
 import byui.cit260.escapeFromInsanityIsland.model.Scene;
 import byui.cit260.escapeFromInsanityIsland.model.Location;
 import escape.from.insanity.island.EscapeFromInsanityIsland;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 
 /**
  *
@@ -143,6 +147,16 @@ public class GameControl {
         Scene Scene = null;
         return Scene;
     }
+
+    private static class GameControlException extends Exception {
+
+        public GameControlException() {
+        }
+
+        private GameControlException(String message) {
+            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        }
+    }
     
     public enum SceneType {
         start,
@@ -183,4 +197,35 @@ public class GameControl {
             System.out.println("*** setRequiredAmount() function called in GameControl ***");
         }
     }
+    
+    public static void saveGame(Game game, String filepath)
+            throws GameControlException {
+        
+        try( FileOutputStream fops = new FileOutputStream(filepath)) {
+            ObjectOutputStream output = new ObjectOutputStream(fops);
+            
+            output.writeObject(game); // write the game object out to file
+        }
+        catch(Exception e) {
+            throw new GameControlException(e.getMessage());
+        }
+    }
+    
+    public static void getSavedGame(String filepath)
+                        throws GameControlException {
+        Game game = null;
+        
+        try( FileInputStream fips = new FileInputStream(filepath)) {
+            ObjectInputStream input = new ObjectInputStream(fips);
+            
+            game = (Game) input.readObject(); // read the game object from file
+        }
+        catch(Exception e) {
+            throw new GameControlException(e.getMessage());
+        }
+        
+        // close the output file
+        EscapeFromInsanityIsland.setCurrentGame(game); // save in EscapeFRom InsanityIsland
+    }
+    
 }

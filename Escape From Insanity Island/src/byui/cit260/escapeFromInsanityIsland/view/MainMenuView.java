@@ -8,6 +8,7 @@ package byui.cit260.escapeFromInsanityIsland.view;
 import buyi.cit260.escapeFromInsanityIsland.control.GameControl;
 import buyi.cit260.escapeFromInsanityIsland.control.SceneController;
 import byui.cit260.escapeFromInsanityIsland.model.Player;
+import escape.from.insanity.island.EscapeFromInsanityIsland;
 
 
 /**
@@ -92,7 +93,17 @@ public class MainMenuView extends View {
     }
 
     private void saveGame() {
-        System.out.println("*** saveGame function called***");
+        // prompt for and get the name of the file to save the game in
+        this.console.println("\n\nEnter the file path for file where the game "
+                            +   "is to be saved.");
+        String filePath = this.getInput();
+        
+        try {
+            // save the game to the specified file
+            GameControl.saveGame(EscapeFromInsanityIsland.getCurrentGame(), filePath);
+        } catch (Exception ex) {
+            ErrorView.display("MainMenuView", ex.getMessage());
+        }
     }
 
     private void battleMode() {

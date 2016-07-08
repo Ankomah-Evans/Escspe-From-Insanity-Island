@@ -24,6 +24,7 @@ public class SceneController {
             // get the scene with the largest travel distance
             if (SceneType[i] == '4') {
             System.out.println(i + "The location with the longest travel distance is The Forest.");
+            
             break;
         }
        
@@ -32,7 +33,25 @@ public class SceneController {
 }
 
     public void display() {
-        System.out.println("display() called.");
+        String value;
+        boolean done = false;
+        
+        do {
+            this.console.println(this.message); // display the prompt message
+            value = this.getInput(); // get the user's selection
+            done = this.doAction(value); // do action based on selection
+            
+        } while (!done);
+        
     }
+
+    private String getInput() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    private boolean doAction(String value) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
     
 }

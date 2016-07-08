@@ -67,38 +67,38 @@ public class StartProgramView {
     }   
 
     private String getPlayersName() {
-        /*
-        WHILE valid value has not be entered
-            DISPLAY promtMessage
-            GET the value entered from keyboard
-            TRIM front and trailing blanks off of the name
-        
-            IF the length of the value is blank THEN
-                DISPLAY "Invalid value: The value can not be blank"
-                CONTINUE
-            ENDIF
-        
-            BREAK
-        ENDWHILE
-        RETURN name
-       */
-     Scanner Keyboard = new Scanner (System.in); // get infile for keyboard
-     String value = ""; // value to be returned
-     boolean valid = false; // initialize to not valid
+
+     // Scanner Keyboard = new Scanner (System.in); // we no longer need this get infile for keyboard
+     // String value = ""; // value to be returned // removing this
      
-     while (!valid){ // loop while an invalid value is enter
-         System.out.println("\n" + this.promptMessage);
-         
-         value = Keyboard.nextLine(); // get next line typed on keyboard
-         value = value. trim(); // trim off leading and trailing blanks
-         
-         if (value.length()< 1) { // value is blank
-             System.out.println("\nInvalid value: value can not be blank");
-             continue;    
-         }
-         break; // end the loop
+     boolean valid = false; // initialize to not valid
+     String selection = null;
+     
+     try {
+     
+        while (!valid){ // loop while an invalid value is enter
+            // System.out.println("\n" + this.promptMessage);
+
+            // get the value entered from the keyboard
+            selection = this.keyboard.readLine();
+            selection = selection.trim();
+
+            if (selection.length()< 1) { // blank value entered
+                ErrorView.display(this.getClass().getName(),
+                                    "You must enter a value");
+                continue;    
+            }
+            
+            break; // end the loop
+            
+        }
+     } catch (Exception e) {
+         ErrorView.display(this.getClass().getName(),
+                            "Error reading input: " + e.getMessage());
+         return null;
     }
-    return value; // return the value entered
+     
+    return selection; // return the value entered
 }
 
     private boolean doAction(String playersName) {
@@ -134,12 +134,12 @@ public class StartProgramView {
         }
 
     public void display() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        System.out.println("Called display()");
     }
-        
-   
-}
 
+    public void readLine() {
+            System.out.println("Called readLine()");
+    } 
     
-    
+}
 
