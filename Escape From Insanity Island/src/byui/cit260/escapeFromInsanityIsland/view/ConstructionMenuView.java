@@ -48,7 +48,7 @@ public class ConstructionMenuView extends View {
                 this.exitMenu();
                 break;				
             default:
-                System.out.println("\n*** What option is that? Try again, bud.");
+                ErrorView.display(this.getClass().getName(),"\n*** What option is that? Try again, bud.");
                 break;
         }
         return false;       
@@ -57,28 +57,28 @@ public class ConstructionMenuView extends View {
     // display the construction menu
 
     private void startCraftTool() {
-		System.out.println("\n*** startCraftTool() called ***");		
+		this.console.println("\n*** startCraftTool() called ***");		
 		
         CraftingControlView craftingControl = new CraftingControlView();
         craftingControl.display();
     }
 
     private void startCraftWeapon() {
-		System.out.println("\n*** startCraftWeapon() called ***");			
+		this.console.println("\n*** startCraftWeapon() called ***");			
 		
         CraftingControlView craftingControl = new CraftingControlView();
         craftingControl.display();
     }
 
     private void startCraftArmor() {
-		System.out.println("\n*** startCraftArmor() called ***");			
+		this.console.println("\n*** startCraftArmor() called ***");			
 		
         CraftingControlView craftingControl = new CraftingControlView();
         craftingControl.display();
     }
 
     private void startCraftItem() {
-		System.out.println("\n*** startCraftItem() called ***");			
+		this.console.println("\n*** startCraftItem() called ***");			
 		
         CraftingControlView craftingControl = new CraftingControlView();
         craftingControl.display();

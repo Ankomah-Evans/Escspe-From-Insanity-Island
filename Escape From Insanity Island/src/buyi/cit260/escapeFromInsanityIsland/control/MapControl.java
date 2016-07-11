@@ -31,15 +31,15 @@ public class MapControl {
 
 
     static void moveCharactersToStartingLocation(Map map) {
-        System.out.println("\n*** moveCharactersToStartingLocation() function called ***");
+        this.console.println("\n*** moveCharactersToStartingLocation() function called ***");
     }
 
     private static void assignScenesToLocations(Map map, Scene[] scenes) {
-        System.out.println("\n*** assignScenesToLocations() function called ***");
+        this.console.println("\n*** assignScenesToLocations() function called ***");
     }
 
     private static Scene[] createScenes() {
-        System.out.println("\n*** assignScenesToLocations() function called ***");
+        this.console.println("\n*** assignScenesToLocations() function called ***");
         Scene[] Scene = null;
         return Scene;
     }

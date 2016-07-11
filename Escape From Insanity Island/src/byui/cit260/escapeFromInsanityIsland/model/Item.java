@@ -123,11 +123,13 @@ public class Item implements Serializable {
     }
 
     public Object getRequiredAmount() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        this.console.println("*** getRequiredAmount() function called in GameControl ***");
+        return Object;
     }
 
     public Object getQuantityInStock() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        this.console.println("*** getQuantityInStock() function called in GameControl ***");
+        return Object;
     }
     
     

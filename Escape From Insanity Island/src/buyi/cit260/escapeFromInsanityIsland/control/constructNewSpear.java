@@ -34,7 +34,7 @@ public class constructNewSpear {
 		}    
 
     void spearParts(int parseInt, int parseInt0) {
-        System.out.println("*** spearParts stub function called ***");
+        this.console.println("*** spearParts stub function called ***");
     }
     
 }

@@ -12,7 +12,7 @@ package byui.cit260.escapeFromInsanityIsland.view;
 class MapControlView {
 
     void display() {
-        System.out.println("*** moveDisplay() function called***");
+        this.console.println("*** moveDisplay() function called***");
     }
     
 }

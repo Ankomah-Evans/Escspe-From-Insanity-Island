@@ -45,7 +45,7 @@ public class GameMenuView extends View {
                 this.happyInventory();
                 break;
             default:
-                System.out.println("*** That's an emotion I don't understand. Try another one. ***");
+                ErrorView.display(this.getClass().getName(),"*** That's an emotion I don't understand. Try another one. ***");
                 break;
          }
        return false; 
@@ -53,28 +53,28 @@ public class GameMenuView extends View {
 
     private void confusedInventory() {
         
-                System.out.println("\n*** confusedInvetory() called ***");
+                this.console.println("\n*** confusedInvetory() called ***");
         InventoryControlView inventoryControlView = new InventoryControlView();
         inventoryControlView.display();
     }
 
     private void angryInventory() {
         
-                System.out.println("\n*** angryInventory() called ***");
+                this.console.println("\n*** angryInventory() called ***");
         InventoryControlView inventoryControlView = new InventoryControlView();
         inventoryControlView.display(); 
     }
 
     private void worriedInventory() {
         
-                System.out.println("\n*** worriedInventory() called ***");
+                this.console.println("\n*** worriedInventory() called ***");
         InventoryControlView inventoryControlView = new InventoryControlView();
         inventoryControlView.display();
     }
 
     private void happyInventory() {
         
-                System.out.println("\n*** happyInventory() called ***");
+                this.console.println("\n*** happyInventory() called ***");
         InventoryControlView inventoryControlView = new InventoryControlView();
         inventoryControlView.display();
     }

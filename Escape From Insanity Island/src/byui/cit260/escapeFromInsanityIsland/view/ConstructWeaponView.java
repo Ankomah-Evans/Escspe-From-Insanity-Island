@@ -52,7 +52,7 @@ public class ConstructWeaponView extends View {
                 break;
                 
             default:
-                System.out.println("*** That's an emotion I don't understand. Try another one. ***");
+                ErrorView.display(this.getClass().getName(),"*** That's an emotion I don't understand. Try another one. ***");
                 break;
         }
         return false;

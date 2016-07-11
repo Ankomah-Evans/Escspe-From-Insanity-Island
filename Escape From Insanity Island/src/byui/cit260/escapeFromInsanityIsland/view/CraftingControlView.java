@@ -12,11 +12,11 @@ package byui.cit260.escapeFromInsanityIsland.view;
 class CraftingControlView {
 
     void display() {
-        System.out.println("\n*** display() function called ***");
+        this.console.println("\n*** display() function called ***");
     }
 
     void displayConstructionMenuView() {
-        System.out.println("\n*** displayConstructionMenuView() function called ***");
+        this.console.println("\n*** displayConstructionMenuView() function called ***");
     }
     
 }

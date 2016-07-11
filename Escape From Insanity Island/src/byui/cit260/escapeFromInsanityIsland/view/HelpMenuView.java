@@ -49,7 +49,7 @@ public class HelpMenuView extends View {
                 this.howToAvoidObstacles();
                 break;
             default:
-                System.out.println("*** Invalid selection *** Try again");
+                ErrorView.display(this.getClass().getName(),"*** Invalid selection *** Try again");
                 break;
         }
         
@@ -57,23 +57,23 @@ public class HelpMenuView extends View {
     }
 
     private void goalOfTheGame() {
-        System.out.println("*** goalOfTheGame stub function called***");
+        this.console.println("*** goalOfTheGame stub function called***");
     }
 
     private void howToMove() {
-        System.out.println("*** howToMove stub function called***");
+        this.console.println("*** howToMove stub function called***");
     }
 
     private void howToUseTools() {
-        System.out.println("*** howToUseTools stub function called***");
+        this.console.println("*** howToUseTools stub function called***");
     }
 
     private void viewMap() {
-        System.out.println("*** viewMap stub function called***");
+        this.console.println("*** viewMap stub function called***");
     }
 
     private void howToAvoidObstacles() {
-        System.out.println("*** howToAvoidObstacles stub function called***");
+        this.console.println("*** howToAvoidObstacles stub function called***");
     }
     
 }

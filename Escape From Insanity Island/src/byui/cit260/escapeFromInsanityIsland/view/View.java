@@ -74,7 +74,7 @@ public abstract class View implements ViewInterface {
             value = value.trim();
             
             if (value.length() < 1) { // blank value entered
-                System.out.println("\n*** You must enter a value *** ");
+                ErrorView.display(this.getClass().getName(),"\n*** You must enter a value *** ");
                 continue;
                 
             }

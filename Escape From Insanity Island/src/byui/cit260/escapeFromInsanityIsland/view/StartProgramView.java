@@ -140,6 +140,16 @@ public class StartProgramView {
     public void readLine() {
             System.out.println("Called readLine()");
     } 
+
+    private class keyboard {
+
+        private static String readLine() {
+            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        }
+
+        public keyboard() {
+        }
+    }
     
 }
 

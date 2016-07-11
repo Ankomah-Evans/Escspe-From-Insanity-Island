@@ -40,19 +40,19 @@ public class ConstructionControl {
     
     
     public void constructNewSpear() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        this.console.println("*** constructNewSpear stub function called ***");
     }
     
     
     public void constructNewArrow() {
-        System.out.println("*** constructNewArrow stub function called ***");
+        this.console.println("*** constructNewArrow stub function called ***");
     }
 
     public void constructNewShield() {
-        System.out.println("*** constructNewShield stub function called ***");
+        this.console.println("*** constructNewShield stub function called ***");
     }
 
     public void constructNewSowrd() {
-        System.out.println("*** constructNewSowrd stub function called ***");
+        this.console.println("*** constructNewSowrd stub function called ***");
     }
 }

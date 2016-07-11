@@ -89,7 +89,7 @@ public class Game implements Serializable {
     }
 
     public void setCharacter(Character character) {
-        System.out.println("*** setCharacter() function called in GameControl ***");
+        this.console.println("*** setCharacter() function called in GameControl ***");
     }
     public Character getCharacter() {
         return this.character;
@@ -100,11 +100,12 @@ public class Game implements Serializable {
     }
 
        public void setInventory(Item[] inventoryList) {
-        System.out.println("*** setInventory() function called in GameControl ***");
+        this.console.println("*** setInventory() function called in GameControl ***");
     }
   
    
     public Location[] getLocation() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        this.console.println("*** getLocation() function called in GameControl ***");
+        return Location;
     }
 }
