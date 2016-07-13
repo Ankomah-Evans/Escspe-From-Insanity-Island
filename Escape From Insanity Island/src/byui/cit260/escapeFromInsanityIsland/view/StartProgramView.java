@@ -13,7 +13,7 @@ import java.util.Scanner;
  *
  * @author user
  */
-public class StartProgramView {
+public class StartProgramView extends View{
     
     private String promptMessage;
     public StartProgramView() {
@@ -101,7 +101,7 @@ public class StartProgramView {
     return selection; // return the value entered
 }
 
-    private boolean doAction(String playersName) {
+    public boolean doAction(String playersName) {
         if (playersName.length() < 2) {
             System.out.println("\nInvalid players name: "
                     + "The name must be greater than one character in length");
@@ -143,8 +143,8 @@ public class StartProgramView {
 
     private class keyboard {
 
-        private static String readLine() {
-            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        private void readLine() {
+           System.out.println("***Called readLine");
         }
 
         public keyboard() {

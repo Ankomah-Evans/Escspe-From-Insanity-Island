@@ -7,16 +7,11 @@ package byui.cit260.escapeFromInsanityIsland.view;
 
 /**
  *
- * @author StarrfoxxW8
+ * @author user
  */
-class MapControlView extends View{
+class character {
 
-    public void display() {
-        this.console.println("*** moveDisplay() function called***");
-    }
-
-    @Override
-    public boolean doAction(String value) {
+    static Character[] values() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     

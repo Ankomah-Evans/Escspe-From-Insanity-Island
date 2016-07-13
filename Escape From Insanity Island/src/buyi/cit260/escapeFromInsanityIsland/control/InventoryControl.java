@@ -5,6 +5,7 @@
  */
 package buyi.cit260.escapeFromInsanityIsland.control;
 
+import byui.cit260.escapeFromInsanityIsland.exceptions.InventoryControlException;
 import byui.cit260.escapeFromInsanityIsland.view.InventoryControlView;
 
 /**
@@ -16,7 +17,8 @@ public class InventoryControl {
     public InventoryControl(){
     }
     
-    public int totalArrow(int[] numbers){
+    public int totalArrow(int[] numbers)
+    throws InventoryControlException {
          int total = 0;
 //         InventoryControlView sum = new InventoryControlView();
 //          //  boolean result = (boolean) sum.doAction(length);

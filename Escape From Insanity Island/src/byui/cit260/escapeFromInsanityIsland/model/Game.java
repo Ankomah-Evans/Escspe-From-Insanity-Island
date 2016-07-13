@@ -8,6 +8,7 @@ package byui.cit260.escapeFromInsanityIsland.model;
 import byui.cit260.escapeFromInsanityIsland.model.Player;
 import byui.cit260.escapeFromInsanityIsland.model.Map;
 import byui.cit260.escapeFromInsanityIsland.view.GameMenuView;
+import java.awt.Point;
 import java.util.ArrayList;
 import java.util.Objects;
 
@@ -107,5 +108,9 @@ public class Game implements Serializable {
     public Location[] getLocation() {
         this.console.println("*** getLocation() function called in GameControl ***");
         return Location;
+    }
+
+    public Point[] getCharactersLocation() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

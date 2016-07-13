@@ -148,7 +148,7 @@ public class GameControl {
         return Scene;
     }
 
-    private static class GameControlException extends Exception {
+       private static class GameControlException extends Exception {
 
         public GameControlException() {
         }

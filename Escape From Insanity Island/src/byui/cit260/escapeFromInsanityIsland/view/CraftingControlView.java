@@ -9,14 +9,20 @@ package byui.cit260.escapeFromInsanityIsland.view;
  *
  * @author StarrfoxxW8
  */
-class CraftingControlView {
+class CraftingControlView extends View{
 
-    void display() {
+    public void display() {
         this.console.println("\n*** display() function called ***");
     }
 
     void displayConstructionMenuView() {
         this.console.println("\n*** displayConstructionMenuView() function called ***");
+    }
+
+    @Override
+    public boolean doAction(String value) {
+        this.console.println("\n*** doAction stub function called***");
+        return true;
     }
     
 }

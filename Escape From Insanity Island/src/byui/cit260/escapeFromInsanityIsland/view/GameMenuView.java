@@ -5,6 +5,10 @@
  */
 package byui.cit260.escapeFromInsanityIsland.view;
 
+import byui.cit260.escapeFromInsanityIsland.model.Game;
+import escape.from.insanity.island.EscapeFromInsanityIsland;
+import java.awt.Point;
+import java.io.PrintWriter;
 import java.util.Scanner;
 
 /**
@@ -77,6 +81,27 @@ public class GameMenuView extends View {
                 this.console.println("\n*** happyInventory() called ***");
         InventoryControlView inventoryControlView = new InventoryControlView();
         inventoryControlView.display();
-    }
     
+    }
+    private void displayCharacters() {
+        this.viewCharacters(EscapeFromIsanityIsland.getOutFile());
+    }
+     private void viewCharacters(PrintWriter out) {
+        Game game = EscapeFromInsanityIsland.getCurrentGame();
+        out.println("\n    LIST OF CHARACTERS");
+        StringBuilder line = new StringBuilder("                                                          ");
+        line.insert(0, "NAME"); 
+        line.insert(10, "LOCATION");
+        out.println(line.toString());
+        
+        Character[] characters = character.values();
+        for (Character character : characters) {
+            Point coordinates = game.getCharactersLocation()[character.ordinal()];
+            line = new StringBuilder("                                                          ");
+            line.insert(0, character.name());
+            int row = coordinates.x+1;
+            int column = coordinates.y+1;
+            line.insert(15,  + row + ", " + column);
+            out.println(line.toString());
+        }   
 }

@@ -6,12 +6,13 @@
 package buyi.cit260.escapeFromInsanityIsland.control;
 
 import byui.cit260.escapeFromInsanityIsland.exceptions.constructNewSpearException;
+import byui.cit260.escapeFromInsanityIsland.view.View;
 
 /**
  *
  * @author StarrfoxxW8
  */
-public class constructNewSpear {
+public class constructNewSpear extends View{
     
 	private String promptMessage = "constructNewSpear stub function called";
 	public constructNewSpear () {
@@ -35,6 +36,13 @@ public class constructNewSpear {
 
     void spearParts(int parseInt, int parseInt0) {
         this.console.println("*** spearParts stub function called ***");
+    }
+
+    @Override
+    public boolean doAction(String value) {
+        this.console.println("*** doAction stub function called***");
+        
+        return true;
     }
     
 }
