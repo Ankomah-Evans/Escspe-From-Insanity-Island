@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package byui.cit260.escapeFromInsanityIsland.model;
+import byui.cit260.escapeFromInsanityIsland.view.ErrorView;
 import java.io.Serializable;
 import java.util.ArrayList;
 

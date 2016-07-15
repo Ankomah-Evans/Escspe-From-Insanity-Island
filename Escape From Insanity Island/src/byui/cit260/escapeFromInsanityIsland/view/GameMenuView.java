@@ -55,6 +55,12 @@ public class GameMenuView extends View {
        return false; 
     }
 
+    public enum character {
+        Jack, 
+        Jessie,
+        Emily,
+        Ruth;
+    }
     private void confusedInventory() {
         
                 this.console.println("\n*** confusedInvetory() called ***");
@@ -84,7 +90,7 @@ public class GameMenuView extends View {
     
     }
     private void displayCharacters() {
-        this.viewCharacters(EscapeFromIsanityIsland.getOutFile());
+        this.viewCharacters(EscapeFromInsanityIsland.getOutFile());
     }
      private void viewCharacters(PrintWriter out) {
         Game game = EscapeFromInsanityIsland.getCurrentGame();
@@ -94,8 +100,8 @@ public class GameMenuView extends View {
         line.insert(10, "LOCATION");
         out.println(line.toString());
         
-        Character[] characters = character.values();
-        for (Character character : characters) {
+        character[] characters = character.values();
+        for (character character : characters) {
             Point coordinates = game.getCharactersLocation()[character.ordinal()];
             line = new StringBuilder("                                                          ");
             line.insert(0, character.name());
@@ -105,3 +111,6 @@ public class GameMenuView extends View {
             out.println(line.toString());
         }   
 }
+}
+
+

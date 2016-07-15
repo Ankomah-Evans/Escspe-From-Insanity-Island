@@ -12,7 +12,7 @@ package byui.cit260.escapeFromInsanityIsland.exceptions;
 public class GameControlException {
 
     public GameControlException(String message) {
-        this.console.println("*** GameControlException stub function called ***");
+        System.out.println("*** GameControlException stub function called ***");
     }
     
 }

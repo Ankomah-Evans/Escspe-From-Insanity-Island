@@ -11,6 +11,7 @@ import byui.cit260.escapeFromInsanityIsland.view.GameMenuView;
 import java.awt.Point;
 import java.util.ArrayList;
 import java.util.Objects;
+import java.io.PrintWriter;
 
 /**
  *
@@ -90,7 +91,7 @@ public class Game implements Serializable {
     }
 
     public void setCharacter(Character character) {
-        this.console.println("*** setCharacter() function called in GameControl ***");
+        System.out.println("*** setCharacter() function called in GameControl ***");
     }
     public Character getCharacter() {
         return this.character;
@@ -101,12 +102,12 @@ public class Game implements Serializable {
     }
 
        public void setInventory(Item[] inventoryList) {
-        this.console.println("*** setInventory() function called in GameControl ***");
+        System.out.println("*** setInventory() function called in GameControl ***");
     }
   
    
     public Location[] getLocation() {
-        this.console.println("*** getLocation() function called in GameControl ***");
+        System.out.println("*** getLocation() function called in GameControl ***");
         return Location;
     }
 

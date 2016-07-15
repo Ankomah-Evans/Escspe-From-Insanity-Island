@@ -5,6 +5,10 @@
  */
 package byui.cit260.escapeFromInsanityIsland.model;
 
+import escape.from.insanity.island.EscapeFromInsanityIsland;
+import java.io.PrintWriter;
+import static java.lang.Integer.parseInt;
+import static java.lang.System.console;
 import java.util.Objects;
 
 /**
@@ -12,6 +16,9 @@ import java.util.Objects;
  * @author user
  */
 public class Item implements Serializable {
+    
+    private static final PrintWriter errorFile = EscapeFromInsanityIsland.getOutFile();
+    private static final PrintWriter logFile = EscapeFromInsanityIsland.getLogFile();
     
     // class instance variable
     private String name;
@@ -118,18 +125,19 @@ public class Item implements Serializable {
     }
 
     @Override
+    
     public String toString() {
         return "Item{" + "name=" + name + ", description=" + description + ", damage=" + damage + ", protection=" + protection + ", healing=" + healing + ", create=" + create + '}';
     }
 
-    public Object getRequiredAmount() {
-        this.console.println("*** getRequiredAmount() function called in GameControl ***");
-        return Object;
+    public  int getRequiredAmount(String object) {
+        System.out.print("*** getRequiredAmount() function called in GameControl ***");
+        return parseInt(object);
     }
 
-    public Object getQuantityInStock() {
-        this.console.println("*** getQuantityInStock() function called in GameControl ***");
-        return Object;
+    public int getQuantityInStock(String object) {
+        System.out.print("*** getQuantityInStock() function called in GameControl ***");
+        return parseInt(object);
     }
     
     

@@ -26,12 +26,7 @@ public class ConstructionControl {
             this.setDisplayMessage("Enter the amount of wood and stone to construct a spear.");
 
             constructNewSpear newspear = new constructNewSpear();
-            try {
-                newspear.spearParts(Integer.parseInt(wood), Integer.parseInt(stone));
-            }
-                catch (constructNewSpearException me) {
-                    PrintWriter.println(me.getMessage());
-                }
+            newspear.spearParts(Integer.parseInt(wood), Integer.parseInt(stone));
 
             return true;
         }
