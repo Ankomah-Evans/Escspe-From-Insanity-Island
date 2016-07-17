@@ -7,6 +7,7 @@ package byui.cit260.escapeFromInsanityIsland.view;
 
 import buyi.cit260.escapeFromInsanityIsland.control.GameControl;
 import buyi.cit260.escapeFromInsanityIsland.control.SceneController;
+import buyi.cit260.escapeFromInsanityIsland.control.WorldResources;
 import byui.cit260.escapeFromInsanityIsland.model.Player;
 import escape.from.insanity.island.EscapeFromInsanityIsland;
 
@@ -57,12 +58,15 @@ public class MainMenuView extends View {
             case "C":
                 this.craftMode();
                 break;  
-            case "M":
-                this.moveMode();
+            case "R":
+                this.WorldResourceList();
                 break;     
             /* case "L":
                 this.locationName();
                 break;      */
+            case "M":
+                this.moveMode();
+                break; 
             default:
                 ErrorView.display(this.getClass().getName(),"\n*** Invalid selection *** Try again");
                 break;
@@ -122,6 +126,32 @@ public class MainMenuView extends View {
         MovementControlView movementControlView = new MovementControlView();
         movementControlView.display();
     }    
+
+    private void WorldResourceList() {
+        StringBuilder line;
+        
+        // Game game = EscapeFromInsanityIsland.getCurrentGame();
+        // WorldResources[] resource = game.getResource();
+        
+        System.out.println("\n                LIST OF RESOURCES");
+        line = new StringBuilder("                             ");
+        line.insert(0, "DESCRIPTION");
+        line.insert(20, "REQUIRED");
+        line.insert(30, "IN STOCK");
+        System.out.println(line.toString());
+        Iterable<WorldResources> inventory = null;
+        
+        // for each inventory item
+        for (WorldResources resource : inventory) {
+            line = new StringBuilder("                           ");
+            line.insert(0, resource.getDescription());
+            line.insert(23, resource.getRequiredAmount());
+            line.insert(33, resource.getQuantityInStock());
+            
+        // Display the line
+        System.out.println(line.toString());
+        }
+    }
 
     /*
     private void locationName() {
