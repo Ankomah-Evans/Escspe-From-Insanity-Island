@@ -22,7 +22,7 @@ public class ConstructionMenuView extends View {
                     + "\n| W - Craft Weapon                    |"
                     + "\n| A - Craft Armor                     |"
                     + "\n| I - Craft Items                     |"
-                    + "\n| X - Exit Menu                       |"
+                    + "\n| Q - Exit Menu                       |"
                     + "\n|                                     |"							
                     + "\n---------------------------------------");
     }
@@ -44,7 +44,7 @@ public class ConstructionMenuView extends View {
             case "I":
                 this.startCraftItem();
                 break;
-            case "X":
+            case "Q":
                 this.exitMenu();
                 break;				
             default:
@@ -56,32 +56,24 @@ public class ConstructionMenuView extends View {
 	
     // display the construction menu
 
-    private void startCraftTool() {
-		this.console.println("\n*** startCraftTool() called ***");		
-		
-        CraftingControlView craftingControl = new CraftingControlView();
-        craftingControl.display();
+    private void startCraftTool() {	
+        CraftToolView craftToolView = new CraftToolView() {};
+        craftToolView.display();
     }
 
     private void startCraftWeapon() {
-		this.console.println("\n*** startCraftWeapon() called ***");			
-		
-        CraftingControlView craftingControl = new CraftingControlView();
-        craftingControl.display();
+        CraftWeaponView craftWeaponView = new CraftWeaponView();
+        craftWeaponView.display();
     }
 
     private void startCraftArmor() {
-		this.console.println("\n*** startCraftArmor() called ***");			
-		
-        CraftingControlView craftingControl = new CraftingControlView();
-        craftingControl.display();
+        CraftArmorView craftArmorView = new CraftArmorView();
+        craftArmorView.display();
     }
 
     private void startCraftItem() {
-		this.console.println("\n*** startCraftItem() called ***");			
-		
-        CraftingControlView craftingControl = new CraftingControlView();
-        craftingControl.display();
+        CraftItemView craftItemView = new CraftItemView();
+        craftItemView.display();
     }
 	
     private void exitMenu() {

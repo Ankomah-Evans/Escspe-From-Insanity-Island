@@ -9,25 +9,25 @@ package byui.cit260.escapeFromInsanityIsland.exceptions;
  *
  * @author StarrfoxxW8
  */
-public class constructNewSpearException extends Exception {
-
-    public constructNewSpearException() {
+public class MapControlException extends Exception {
+    
+    public MapControlException() {
     }
 
-    public constructNewSpearException(String message) {
+
+public MapControlException(String message) {
         super(message);
     }
 
-    public constructNewSpearException(String message, Throwable cause) {
+    public MapControlException(String message, Throwable cause) {
         super(message, cause);
     }
 
-    public constructNewSpearException(Throwable cause) {
+    public MapControlException(Throwable cause) {
         super(cause);
     }
 
-    public constructNewSpearException(String message, Throwable cause, boolean enableSuppression, boolean writableStackTrace) {
+    public MapControlException(String message, Throwable cause, boolean enableSuppression, boolean writableStackTrace) {
         super(message, cause, enableSuppression, writableStackTrace);
     }
-   
 }

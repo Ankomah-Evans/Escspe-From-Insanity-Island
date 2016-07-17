@@ -6,9 +6,11 @@
 package buyi.cit260.escapeFromInsanityIsland.control;
 
 
+import byui.cit260.escapeFromInsanityIsland.exceptions.MapControlException;
 import byui.cit260.escapeFromInsanityIsland.model.Map;
 import byui.cit260.escapeFromInsanityIsland.model.Scene;
 import escape.from.insanity.island.EscapeFromInsanityIsland;
+import java.awt.Point;
 import java.io.PrintWriter;
 
 /**
@@ -26,24 +28,55 @@ public class MapControl {
     public static Map createMap() {
         
         // create the map
-        Map map = null; // new Map(25, 25);
+        Map map = new Map(25, 25);
         
         // create a list of the different scenes in the game
-        // Scene[] scenes = createScenes();
+        Scene[] scenes = createScenes();
         
         // assign the different scenes to locations in the map
-        // assignScenesToLocations(map, scenes);
+        assignScenesToLocations(map, scenes);
         
         return map;
     }
 
-
-    public static void moveCharactersToStartingLocation(Map map) {
-        System.out.println("\n*** moveCharactersToStartingLocation() function called ***");
+    public static int moveCharacterToLocation(Character character, Point coordinates) throws MapControlException {
+        
+        Map map = EscapeFromInsanityIsland.getCurrentGame().getMap();
+        int newRow = coordinates.x-1;
+        int newColumn = coordinates.y-1;
+        
+        if (newRow < 0 || newRow >= map.getNoOfRows() ||
+                newColumn < 0 || newColumn >= map.getNoOfColumns()) {
+            throw new MapControlException("Can not move the character to the location "
+                                        + coordinates.x + ", " + coordinates.y
+                                        + " because that location is outside "
+                                        + " the bounds of the map.");
+        }
+        
+        return 0;
     }
 
-    public void assignScenesToLocations(Map map, Scene[] scenes) {
-        System.out.println("\n*** assignScenesToLocations() function called ***");
+    public static int moveCharactersToStartingLocation(Map map) throws MapControlException {
+        // for every character
+        Character[] character = Character.values();
+        
+        for (Character character : characters) {
+            Point coordinates = character.getCoordinates();
+            MapControl.moveActorToLocation(character, coordinates);
+
+        }     
+        return 0;
+    }
+
+    public static int assignScenesToLocations(Map map, Scene[] scenes) throws MapControlException {
+        // for every scene
+        Scenes[] scenes = Scenes.values();
+        
+        for (Scenes scenes : scenes) {
+            Point coordinates = scenes.getCoordinates();
+            MapControl.assignScenesToLocations(map, scenes)
+        }
+        return 0;
     }
 
     public Scene[] createScenes() {
@@ -53,3 +86,17 @@ public class MapControl {
     }
     
 }
+
+@Override
+    public boolean doAction(String choice) {
+       Character character = null
+
+    // move actor to specified location
+       try {
+           MapControl.moveCharacterToLocation(character, coordinates);
+           } catch (MapControlException me) {
+              System.out.println(me.getMessage());
+    }
+
+}
+

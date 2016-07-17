@@ -9,24 +9,25 @@ package byui.cit260.escapeFromInsanityIsland.exceptions;
  *
  * @author StarrfoxxW8
  */
-public class constructNewSpearException extends Exception {
 
-    public constructNewSpearException() {
+public class makeNewSwordException extends Exception {
+
+    public makeNewSwordException() {
     }
 
-    public constructNewSpearException(String message) {
+    public makeNewSwordException(String message) {
         super(message);
     }
 
-    public constructNewSpearException(String message, Throwable cause) {
+    public makeNewSwordException(String message, Throwable cause) {
         super(message, cause);
     }
 
-    public constructNewSpearException(Throwable cause) {
+    public makeNewSwordException(Throwable cause) {
         super(cause);
     }
 
-    public constructNewSpearException(String message, Throwable cause, boolean enableSuppression, boolean writableStackTrace) {
+    public makeNewSwordException(String message, Throwable cause, boolean enableSuppression, boolean writableStackTrace) {
         super(message, cause, enableSuppression, writableStackTrace);
     }
    

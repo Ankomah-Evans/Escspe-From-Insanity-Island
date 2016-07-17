@@ -31,6 +31,7 @@ public class MainMenuView extends View {
                   + "\n---------------------------------------"
                   + "\nB - Battle"
                   + "\nC - Construct" 
+                  + "\nR - View World Resources"  
                   + "\nM - Move"   
                   + "\nL - Find location with longest travel time");              
     }

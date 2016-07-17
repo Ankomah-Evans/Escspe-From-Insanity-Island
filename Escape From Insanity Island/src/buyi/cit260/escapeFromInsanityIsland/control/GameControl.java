@@ -5,6 +5,7 @@
  */
 package buyi.cit260.escapeFromInsanityIsland.control;
 
+import byui.cit260.escapeFromInsanityIsland.exceptions.MapControlException;
 import byui.cit260.escapeFromInsanityIsland.model.Game;
 import byui.cit260.escapeFromInsanityIsland.model.Item;
 import byui.cit260.escapeFromInsanityIsland.model.Player;
@@ -31,7 +32,7 @@ public class GameControl {
             this.console = EscapeFromInsanityIsland.getOutFile();
         }
 
-    public static void createNewGame(Player player) {
+    public static void createNewGame(Player player) throws MapControlException {
         
         Game game = new Game(); // create new game
         EscapeFromInsanityIsland.setCurrentGame(game); // save in EscapeFromInsanityIsland
