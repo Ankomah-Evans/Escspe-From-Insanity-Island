@@ -5,14 +5,19 @@
  */
 package byui.cit260.escapeFromInsanityIsland.exceptions;
 
+import escape.from.insanity.island.EscapeFromInsanityIsland;
+import java.io.PrintWriter;
+
 /**
  *
  * @author StarrfoxxW8
  */
 public class GameControlException {
-
-    public GameControlException(String message) {
-        System.out.println("*** GameControlException stub function called ***");
-    }
+    
+    private PrintWriter console;
+    
+        public void GameControlException() {
+            this.console = EscapeFromInsanityIsland.getOutFile();
+        }
     
 }

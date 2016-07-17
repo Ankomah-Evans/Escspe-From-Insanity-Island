@@ -8,14 +8,22 @@ package buyi.cit260.escapeFromInsanityIsland.control;
 
 import byui.cit260.escapeFromInsanityIsland.model.Map;
 import byui.cit260.escapeFromInsanityIsland.model.Scene;
+import escape.from.insanity.island.EscapeFromInsanityIsland;
+import java.io.PrintWriter;
 
 /**
  *
  * @author user
  */
 public class MapControl {
+    
+    private PrintWriter console;
+    
+        public void MapControl() {
+            this.console = EscapeFromInsanityIsland.getOutFile();
+        }
 
-    public static Map createMap() {
+    public Map createMap() {
         
         // create the map
         Map map = new Map(25, 25);
@@ -30,15 +38,15 @@ public class MapControl {
     }
 
 
-    static void moveCharactersToStartingLocation(Map map) {
+    public void moveCharactersToStartingLocation(Map map) {
         this.console.println("\n*** moveCharactersToStartingLocation() function called ***");
     }
 
-    private static void assignScenesToLocations(Map map, Scene[] scenes) {
+    public void assignScenesToLocations(Map map, Scene[] scenes) {
         this.console.println("\n*** assignScenesToLocations() function called ***");
     }
 
-    private static Scene[] createScenes() {
+    public Scene[] createScenes() {
         this.console.println("\n*** assignScenesToLocations() function called ***");
         Scene[] Scene = null;
         return Scene;

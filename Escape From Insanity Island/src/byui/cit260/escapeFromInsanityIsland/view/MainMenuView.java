@@ -39,18 +39,18 @@ public class MainMenuView extends View {
         value = value.toUpperCase();
         
         switch (value){
-            case "N": 
+            /* case "N": 
                 this.startNewGame();
-                break;
+                break; */
             case "G":
                 this.startExistingGame();
                 break;
             case "H":
                 this.displayHelpMenu();
                 break;
-            case "S":
+            /* case "S":
                 this.saveGame();
-                break;
+                break; */
             case "B":
                 this.battleMode();
                 break;    
@@ -60,9 +60,9 @@ public class MainMenuView extends View {
             case "M":
                 this.moveMode();
                 break;     
-            case "L":
+            /* case "L":
                 this.locationName();
-                break;      
+                break;      */
             default:
                 ErrorView.display(this.getClass().getName(),"\n*** Invalid selection *** Try again");
                 break;
@@ -73,14 +73,14 @@ public class MainMenuView extends View {
     }
         private String menu;
 
-    private void startNewGame() {
+    /* private void startNewGame() {
         GameControl.createNewGame(escapeFromInsanityIsland.getPlayer());
    
         GameMenuView gameMenu = new GameMenuView();
         gameMenu.display();
         //THIS IS WHERE YOU WILL MAKE THE CALL TO GO TO THE VIEW FOR THE 
         //STARTING LOCATION FOR THE USER
-    }
+    } */
 
     private void startExistingGame() {
         this.console.println("*** startExistingGame function called***");
@@ -92,6 +92,7 @@ public class MainMenuView extends View {
         helpMenuView.display();
     }
 
+    /*
     private void saveGame() {
         // prompt for and get the name of the file to save the game in
         this.console.println("\n\nEnter the file path for file where the game "
@@ -105,6 +106,7 @@ public class MainMenuView extends View {
             ErrorView.display("MainMenuView", ex.getMessage());
         }
     }
+*/
 
     private void battleMode() {
         CombatControlView combatControlView = new CombatControlView();
@@ -121,10 +123,11 @@ public class MainMenuView extends View {
         movementControlView.display();
     }    
 
+    /*
     private void locationName() {
         SceneController sceneController = new SceneController();
         sceneController.display();
-    }
+    } */
 
     private static class escapeFromInsanityIsland {
 

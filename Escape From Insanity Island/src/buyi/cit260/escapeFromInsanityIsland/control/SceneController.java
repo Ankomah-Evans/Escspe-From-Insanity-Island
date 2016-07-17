@@ -5,6 +5,8 @@
  */
 package buyi.cit260.escapeFromInsanityIsland.control;
 import byui.cit260.escapeFromInsanityIsland.model.Scene;
+import escape.from.insanity.island.EscapeFromInsanityIsland;
+import java.io.PrintWriter;
 
 
 
@@ -13,6 +15,12 @@ import byui.cit260.escapeFromInsanityIsland.model.Scene;
  * @author hedgehog
  */
 public class SceneController {
+    
+    private PrintWriter console;
+    
+        public void SceneController() {
+            this.console = EscapeFromInsanityIsland.getOutFile();
+        }
     
     
     public int[] findSceneName(String SceneName, int[] SceneType) {
@@ -32,7 +40,7 @@ public class SceneController {
         return SceneType;
 }
 
-    public void display() {
+    /* public void display() {
         String value;
         boolean done = false;
         
@@ -43,11 +51,11 @@ public class SceneController {
             
         } while (!done);
         
-    }
+    } */
 
     private String getInput() {
         this.console.println("\n*** getInput() function called ***");
-        return;
+        return getInput();
     }
 
     private boolean doAction(String value) {

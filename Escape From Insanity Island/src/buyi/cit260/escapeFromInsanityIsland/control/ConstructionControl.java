@@ -7,12 +7,21 @@ package buyi.cit260.escapeFromInsanityIsland.control;
 
 import byui.cit260.escapeFromInsanityIsland.exceptions.constructNewSpearException;
 import byui.cit260.escapeFromInsanityIsland.view.View;
+import escape.from.insanity.island.EscapeFromInsanityIsland;
+import java.io.BufferedReader;
+import java.io.PrintWriter;
 
 /**
  *
  * @author StarrfoxxW8
  */
 public class ConstructionControl {
+    
+    private PrintWriter console;
+    
+        public void ConstructionControl() {
+            this.console = EscapeFromInsanityIsland.getOutFile();
+        }
 
   
     public abstract class ConstructWeaponView extends View {

@@ -106,10 +106,10 @@ public class Game implements Serializable {
     }
   
    
-    public Location[] getLocation() {
+    /*public Location[] getLocation() {
         System.out.println("*** getLocation() function called in GameControl ***");
         return Location;
-    }
+    } */
 
     public Point[] getCharactersLocation() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.

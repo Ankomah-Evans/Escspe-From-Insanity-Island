@@ -15,14 +15,22 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.io.PrintWriter;
+import java.io.BufferedReader;
 
 /**
  *
  * @author user
  */
 public class GameControl {
+    
+    private PrintWriter console;
+    
+        public void GameControlException() {
+            this.console = EscapeFromInsanityIsland.getOutFile();
+        }
 
-    public static void createNewGame(Player player) {
+    /* public createNewGame(Player player) {
         
         Game game = new Game(); // create new game
         EscapeFromInsanityIsland.setCurrentGame(game); // save in EscapeFromInsanityIsland
@@ -40,7 +48,7 @@ public class GameControl {
         // move character to starting position on the map
         MapControl.moveCharactersToStartingLocation(map);
         
-    }
+    } */
 
     private static InventoryItem[] createInventoryList() {
         
@@ -153,9 +161,6 @@ public class GameControl {
         public GameControlException() {
         }
 
-        private GameControlException(String message) {
-            this.console.println("*** GameControlException stub function called ***");
-        }
     }
     
     public enum SceneType {
@@ -198,6 +203,7 @@ public class GameControl {
         }
     }
     
+    /*
     public static void saveGame(Game game, String filepath)
             throws GameControlException {
         
@@ -220,12 +226,12 @@ public class GameControl {
             
             game = (Game) input.readObject(); // read the game object from file
         }
-        catch(Exception e) {
+         catch(Exception e) {
             throw new GameControlException(e.getMessage());
-        }
+        } */
         
         // close the output file
-        EscapeFromInsanityIsland.setCurrentGame(game); // save in EscapeFRom InsanityIsland
+        // EscapeFromInsanityIsland.setCurrentGame(game); // save in EscapeFRom InsanityIsland 
     }
     
-}
+
