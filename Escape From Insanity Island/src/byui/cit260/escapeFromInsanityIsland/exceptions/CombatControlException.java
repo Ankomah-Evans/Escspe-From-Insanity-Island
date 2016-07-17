@@ -14,20 +14,20 @@ public class CombatControlException extends Exception {
     public CombatControlException() {
     }
 
-    public CombatControlException(String string) {
-        super(string);
+    public CombatControlException(String message) {
+        super(message);
     }
 
-    public CombatControlException(String string, Throwable thrwbl) {
-        super(string, thrwbl);
+    public CombatControlException(String message, Throwable cause) {
+        super(message, cause);
     }
 
-    public CombatControlException(Throwable thrwbl) {
-        super(thrwbl);
+    public CombatControlException(Throwable cause) {
+        super(cause);
     }
 
-    public CombatControlException(String string, Throwable thrwbl, boolean bln, boolean bln1) {
-        super(string, thrwbl, bln, bln1);
+    public CombatControlException(String message, Throwable cause, boolean enableSuppression, boolean writableStackTrace) {
+        super(message, cause, enableSuppression, writableStackTrace);
     }
     
     

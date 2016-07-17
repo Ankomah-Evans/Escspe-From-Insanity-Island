@@ -14,20 +14,20 @@ public class sizeOfArrowException extends Exception{
     public sizeOfArrowException() {
     }
 
-    public sizeOfArrowException(String string) {
-        super(string);
+    public sizeOfArrowException(String message) {
+        super(message);
     }
 
-    public sizeOfArrowException(String string, Throwable thrwbl) {
-        super(string, thrwbl);
+    public sizeOfArrowException(String message, Throwable cause) {
+        super(message, cause);
     }
 
-    public sizeOfArrowException(Throwable thrwbl) {
-        super(thrwbl);
+    public sizeOfArrowException(Throwable cause) {
+        super(cause);
     }
 
-    public sizeOfArrowException(String string, Throwable thrwbl, boolean bln, boolean bln1) {
-        super(string, thrwbl, bln, bln1);
+    public sizeOfArrowException(String message, Throwable cause, boolean enableSuppression, boolean writableStackTrace) {
+        super(message, cause, enableSuppression, writableStackTrace);
     }
 
        

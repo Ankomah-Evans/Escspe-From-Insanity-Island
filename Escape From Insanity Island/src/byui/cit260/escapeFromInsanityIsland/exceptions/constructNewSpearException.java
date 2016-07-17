@@ -14,20 +14,20 @@ public class constructNewSpearException extends Exception {
     public constructNewSpearException() {
     }
 
-    public constructNewSpearException(String string) {
-        super(string);
+    public constructNewSpearException(String message) {
+        super(message);
     }
 
-    public constructNewSpearException(String string, Throwable thrwbl) {
-        super(string, thrwbl);
+    public constructNewSpearException(String message, Throwable cause) {
+        super(message, cause);
     }
 
-    public constructNewSpearException(Throwable thrwbl) {
-        super(thrwbl);
+    public constructNewSpearException(Throwable cause) {
+        super(cause);
     }
 
-    public constructNewSpearException(String string, Throwable thrwbl, boolean bln, boolean bln1) {
-        super(string, thrwbl, bln, bln1);
+    public constructNewSpearException(String message, Throwable cause, boolean enableSuppression, boolean writableStackTrace) {
+        super(message, cause, enableSuppression, writableStackTrace);
     }
     
     
