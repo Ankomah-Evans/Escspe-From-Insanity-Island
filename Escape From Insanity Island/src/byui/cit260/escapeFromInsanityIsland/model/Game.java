@@ -5,6 +5,7 @@
  */
 package byui.cit260.escapeFromInsanityIsland.model;
 
+import buyi.cit260.escapeFromInsanityIsland.control.GameControl;
 import byui.cit260.escapeFromInsanityIsland.model.Player;
 import byui.cit260.escapeFromInsanityIsland.model.Map;
 import byui.cit260.escapeFromInsanityIsland.view.GameMenuView;
@@ -114,4 +115,8 @@ public class Game implements Serializable {
     public Point[] getCharactersLocation() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
+    /* private setInventory(GameControl.InventoryItem[] inventoryList) {
+        System.out.println("setInventory called");
+    } */
 }

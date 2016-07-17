@@ -6,6 +6,7 @@
 package buyi.cit260.escapeFromInsanityIsland.control;
 
 import byui.cit260.escapeFromInsanityIsland.model.Game;
+import byui.cit260.escapeFromInsanityIsland.model.Item;
 import byui.cit260.escapeFromInsanityIsland.model.Player;
 import byui.cit260.escapeFromInsanityIsland.model.Map;
 import byui.cit260.escapeFromInsanityIsland.model.Scene;
@@ -30,7 +31,7 @@ public class GameControl {
             this.console = EscapeFromInsanityIsland.getOutFile();
         }
 
-    /* public createNewGame(Player player) {
+    public static void createNewGame(Player player) {
         
         Game game = new Game(); // create new game
         EscapeFromInsanityIsland.setCurrentGame(game); // save in EscapeFromInsanityIsland
@@ -38,8 +39,9 @@ public class GameControl {
         game.setPlayer(player); // save player in game
         
         // create the inventory list and save in the game
-        
         InventoryItem[] inventoryList = GameControl.createInventoryList();
+        // game.setInventory(inventoryList)
+
         
         
         Map map = MapControl.createMap(); // create and initialize new map
@@ -48,9 +50,9 @@ public class GameControl {
         // move character to starting position on the map
         MapControl.moveCharactersToStartingLocation(map);
         
-    } */
+    } 
 
-    private static InventoryItem[] createInventoryList() {
+    public static InventoryItem[] createInventoryList() {
         
         // created array(list) of inventory items
         InventoryItem[] inventory = new InventoryItem[3];
@@ -76,6 +78,61 @@ public class GameControl {
         return inventory;
     }
 
+    
+    public static WorldResources[] createWorldResourceList() {
+        
+        // created array(list) of inventory items
+        
+        /*public enum material {
+            iron,
+            gold,
+            diamond,
+            stone,
+            plank,
+            dirt,
+        } */
+        
+        WorldResources[] resource = new WorldResources[6];
+        
+        WorldResources iron = new WorldResources();
+        iron.setDescription("Iron");
+        iron.setQuantityInStock(0);
+        iron.setRequiredAmount(0);
+        resource[1] = iron;
+        
+        WorldResources gold = new WorldResources();
+        gold.setDescription("Gold");
+        gold.setQuantityInStock(0);
+        gold.setRequiredAmount(0);
+        resource[2] = gold;
+        
+        WorldResources diamond = new WorldResources();
+        diamond.setDescription("Diamond");
+        diamond.setQuantityInStock(0);
+        diamond.setRequiredAmount(0);
+        resource[3] = diamond;
+        
+        WorldResources stone = new WorldResources();
+        stone.setDescription("Stone");
+        stone.setQuantityInStock(0);
+        stone.setRequiredAmount(0);
+        resource[4] = stone;
+        
+        WorldResources plank = new WorldResources();
+        plank.setDescription("Plank");
+        plank.setQuantityInStock(0);
+        plank.setRequiredAmount(0);
+        resource[5] = plank;
+        
+        WorldResources dirt = new WorldResources();
+        dirt.setDescription("Dirt");
+        dirt.setQuantityInStock(0);
+        dirt.setRequiredAmount(0);
+        resource[6] = dirt;
+       
+        return resource;
+    }
+    
     
     public static Scene[] createScenes() {
         Scene[] scenes = new Scene[SceneType.values().length];

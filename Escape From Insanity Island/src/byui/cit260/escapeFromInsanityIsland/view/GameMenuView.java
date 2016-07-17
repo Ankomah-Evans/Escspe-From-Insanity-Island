@@ -89,11 +89,15 @@ public class GameMenuView extends View {
         inventoryControlView.display();
     
     }
+    /*
     private void displayCharacters() {
-        this.viewCharacters(EscapeFromInsanityIsland.getOutFile());
+        this.viewCharacters(EscapeFromInsanityIsland.getOutFile()); // causing an error
     }
-     private void viewCharacters(PrintWriter out) {
-        Game game = EscapeFromInsanityIsland.getCurrentGame();
+    */
+    
+    /* This is causing an error  
+    private void viewCharacters(PrintWriter out) {
+        Game game = EscapeFromInsanityIsland.getCurrentGame(); // error here
         out.println("\n    LIST OF CHARACTERS");
         StringBuilder line = new StringBuilder("                                                          ");
         line.insert(0, "NAME"); 
@@ -109,8 +113,8 @@ public class GameMenuView extends View {
             int column = coordinates.y+1;
             line.insert(15,  + row + ", " + column);
             out.println(line.toString());
-        }   
+        }   */
 }
-}
+
 
 

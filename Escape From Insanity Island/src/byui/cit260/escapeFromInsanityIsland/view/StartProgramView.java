@@ -7,7 +7,6 @@ package byui.cit260.escapeFromInsanityIsland.view;
 
 import buyi.cit260.escapeFromInsanityIsland.control.GameControl;
 import byui.cit260.escapeFromInsanityIsland.model.Player;
-import java.util.Scanner;
 
 /**
  *
@@ -47,6 +46,8 @@ public class StartProgramView extends View{
                +"\n* tribe. A winning message and picture will be         *"
                +"\n* displayed to the user.                               *"
                +"\n********************************************************"
+               +"\n*                                                      *"
+               +"\n* Please enter a name...                               *"
                );
                
     }

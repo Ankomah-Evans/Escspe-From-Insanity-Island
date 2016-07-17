@@ -47,10 +47,9 @@ public class EscapeFromInsanityIsland {
             String filePath = "log.txt";
             EscapeFromInsanityIsland.logFile = new PrintWriter(filePath);
             
-            // create StartProgramView and start the program
+            // create StartProgramView and display the start program view
             StartProgramView startProgramView = new StartProgramView();
-            startProgramView.display();
-            return;
+            startProgramView.displayStartProgramView();
             
         } catch (Throwable e) {
             
@@ -111,15 +110,15 @@ public class EscapeFromInsanityIsland {
     }
 
     public static void setPlayer(Player player) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        System.out.println("setPlayer called");
     }
 
     public static void setCurrentGame(Game game) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        System.out.println("setCurrentGame called");
     }
 
-    public static Game getCurrentGame() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public static void getCurrentGame() {
+        System.out.println("getCurrentGame called");
     }
     
 }

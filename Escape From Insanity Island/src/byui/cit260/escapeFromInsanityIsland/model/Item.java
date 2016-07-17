@@ -139,6 +139,12 @@ public class Item implements Serializable {
         System.out.print("*** getQuantityInStock() function called in GameControl ***");
         return parseInt(object);
     }
+
+    public static class iron {
+
+        public iron() {
+        }
+    }
     
     
     
