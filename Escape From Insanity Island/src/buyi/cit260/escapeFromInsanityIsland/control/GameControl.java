@@ -243,7 +243,7 @@ public class GameControl {
     }
     
 
-    private static class InventoryItem {
+    public static class InventoryItem {
 
         public InventoryItem() {
         }

@@ -117,8 +117,8 @@ public class EscapeFromInsanityIsland {
         System.out.println("setCurrentGame called");
     }
 
-    public static void getCurrentGame() {
-        System.out.println("getCurrentGame called");
+    public static Game getCurrentGame() {
+        return currentGame;
     }
     
 }

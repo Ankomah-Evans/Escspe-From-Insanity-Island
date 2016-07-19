@@ -19,6 +19,8 @@ import java.io.PrintWriter;
  * @author user
  */
 public class Game implements Serializable {
+        
+private PrintWriter console;
     
     // class instance variable
     private double totalTime;
@@ -56,7 +58,14 @@ public class Game implements Serializable {
     public void setNoPeople(double noPeople) {
         this.noPeople = noPeople;
     }
+    
+    public Map getMap(){
+         return map;
+    }
 
+    public void setMap (Map map){
+        this.map = map;
+    }
     @Override
     public int hashCode() {
         int hash = 5;
@@ -97,26 +106,25 @@ public class Game implements Serializable {
     public Character getCharacter() {
         return this.character;
     }
-
-    public void setMap(Map map) {
-        this.map = map;
-    }
+    
 
        public void setInventory(Item[] inventoryList) {
         System.out.println("*** setInventory() function called in GameControl ***");
     }
   
    
-    /*public Location[] getLocation() {
-        System.out.println("*** getLocation() function called in GameControl ***");
+  /*  public Location[] getLocation() {
+        this.console.println("*** getLocation() function called in GameControl ***");
         return Location;
-    } */
+    
+    
+   /* public Point getCharactersLocation() {
+        this.console.println("getCharacterLocation called");
+        return;
+    }*/
 
-    public Point[] getCharactersLocation() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    /* private setInventory(GameControl.InventoryItem[] inventoryList) {
-        System.out.println("setInventory called");
-    } */
+     public Game(GameControl.InventoryItem[] inventoryList) {
+        this.console.println("setInventory called");
+        return;
+     }
 }

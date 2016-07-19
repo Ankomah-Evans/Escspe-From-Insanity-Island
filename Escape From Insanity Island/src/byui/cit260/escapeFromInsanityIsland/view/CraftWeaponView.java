@@ -12,7 +12,7 @@ import byui.cit260.escapeFromInsanityIsland.exceptions.makeNewSwordException;
  * @author StarrfoxxW8
  */
 
-private class CraftWeaponView extends View{
+public class CraftWeaponView extends View{
     
 	private String promptMessage = "craftWeaponView stub function called";
 	public CraftWeaponView () {
@@ -33,5 +33,10 @@ private class CraftWeaponView extends View{
 		return newSword;
 		
 		}      
+
+    @Override
+    public boolean doAction(String value) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }
     

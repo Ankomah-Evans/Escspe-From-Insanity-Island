@@ -11,7 +11,7 @@ import byui.cit260.escapeFromInsanityIsland.exceptions.makeNewHammerException;
  *
  * @author StarrfoxxW8
  */
-private class CraftToolView extends View{
+public class CraftToolView extends View{
     
 	private String promptMessage = "craftTool stub function called";
 	public CraftToolView () {
@@ -32,4 +32,9 @@ private class CraftToolView extends View{
 		return newHammer;
 		
 		}      
+
+    @Override
+    public boolean doAction(String value) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }

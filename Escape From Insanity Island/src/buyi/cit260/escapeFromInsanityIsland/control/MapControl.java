@@ -25,13 +25,14 @@ public class MapControl {
             this.console = EscapeFromInsanityIsland.getOutFile();
         }
 
-    public static Map createMap() {
+    public static Map createMap() 
+            throws MapControlException {
         
         // create the map
         Map map = new Map(25, 25);
         
         // create a list of the different scenes in the game
-        Scene[] scenes = createScenes();
+        Scene[] scenes = GameControl.createScenes();
         
         // assign the different scenes to locations in the map
         assignScenesToLocations(map, scenes);
@@ -39,7 +40,8 @@ public class MapControl {
         return map;
     }
 
-    public static int moveCharacterToLocation(Character character, Point coordinates) throws MapControlException {
+    public static int moveCharacterToLocation( Point coordinates) 
+            throws MapControlException {
         
         Map map = EscapeFromInsanityIsland.getCurrentGame().getMap();
         int newRow = coordinates.x-1;
@@ -52,11 +54,12 @@ public class MapControl {
                                         + " because that location is outside "
                                         + " the bounds of the map.");
         }
-        
+       // map.setLocations(map.getLocations()[newRow][newColumn]);
         return 0;
     }
 
-    public static int moveCharactersToStartingLocation(Map map) throws MapControlException {
+    public static int moveCharactersToStartingLocation(Map map) 
+            throws MapControlException {
         // for every character
         Character[] character = Character.values();
         
@@ -68,13 +71,14 @@ public class MapControl {
         return 0;
     }
 
-    public static int assignScenesToLocations(Map map, Scene[] scenes) throws MapControlException {
+    public static int assignScenesToLocations(Map map, Scene[] scenes) 
+            throws MapControlException {
         // for every scene
         Scenes[] scenes = Scenes.values();
         
         for (Scenes scenes : scenes) {
             Point coordinates = scenes.getCoordinates();
-            MapControl.assignScenesToLocations(map, scenes)
+            MapControl.assignScenesToLocations(map, scenes);
         }
         return 0;
     }
@@ -87,7 +91,6 @@ public class MapControl {
     
 }
 
-@Override
     public boolean doAction(String choice) {
        Character character = null
 

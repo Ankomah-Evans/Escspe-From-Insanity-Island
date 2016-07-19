@@ -8,8 +8,11 @@ package byui.cit260.escapeFromInsanityIsland.view;
 import buyi.cit260.escapeFromInsanityIsland.control.GameControl;
 import buyi.cit260.escapeFromInsanityIsland.control.SceneController;
 import buyi.cit260.escapeFromInsanityIsland.control.WorldResources;
+import byui.cit260.escapeFromInsanityIsland.exceptions.MapControlException;
 import byui.cit260.escapeFromInsanityIsland.model.Player;
 import escape.from.insanity.island.EscapeFromInsanityIsland;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 
 /**
@@ -27,13 +30,13 @@ public class MainMenuView extends View {
                   + "\nG - Get and start saved game"
                   + "\nH - Get help on how to play the game"
                   + "\nS - Save game"
-                  + "\nQ - Quit"
-                  + "\n---------------------------------------"
                   + "\nB - Battle"
                   + "\nC - Construct" 
                   + "\nR - View World Resources"  
                   + "\nM - Move"   
-                  + "\nL - Find location with longest travel time");              
+                  + "\nL - Find location with longest travel time"
+                  + "\nQ - Quit"
+                  + "\n---------------------------------------");              
     }
    
     @Override
@@ -41,9 +44,9 @@ public class MainMenuView extends View {
         value = value.toUpperCase();
         
         switch (value){
-            /* case "N": 
+            case "N": 
                 this.startNewGame();
-                break; */
+                break; 
             case "G":
                 this.startExistingGame();
                 break;
@@ -78,14 +81,18 @@ public class MainMenuView extends View {
     }
         private String menu;
 
-    /* private void startNewGame() {
-        GameControl.createNewGame(escapeFromInsanityIsland.getPlayer());
+     private void startNewGame() {
+       /* try {
+            GameControl.createNewGame(escapeFromInsanityIsland.getPlayer());
+        } catch (MapControlException ex) {
+            ErrorView.display("MainMenuView", ex.getMessage());
+        }*/
    
         GameMenuView gameMenu = new GameMenuView();
         gameMenu.display();
         //THIS IS WHERE YOU WILL MAKE THE CALL TO GO TO THE VIEW FOR THE 
         //STARTING LOCATION FOR THE USER
-    } */
+    } 
 
     private void startExistingGame() {
         this.console.println("*** startExistingGame function called***");

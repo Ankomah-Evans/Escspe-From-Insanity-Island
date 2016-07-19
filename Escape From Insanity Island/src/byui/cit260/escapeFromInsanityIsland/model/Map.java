@@ -25,6 +25,7 @@ public class Map implements Serializable {
     
     public Map(int noOfRows, int noOfColumns) {
         
+        try {
         if (noOfRows < 1 || noOfColumns < 1) {
             ErrorView.display(this.getClass().getName(),"The number of rows and columns must be > zero");
             return;
@@ -49,7 +50,11 @@ public class Map implements Serializable {
             }
         }
     }
-
+     catch (Exception e) {
+         ErrorView.display(this.getClass().getName(),
+                 "Error" + e.getMessage());
+}
+    }
     public long getNoOfRows() {
         return noOfRows;
     }
