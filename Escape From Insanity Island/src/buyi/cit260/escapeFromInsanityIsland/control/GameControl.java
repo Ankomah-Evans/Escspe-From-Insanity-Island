@@ -261,7 +261,6 @@ public class GameControl {
         }
     }
     
-    /*
     public static void saveGame(Game game, String filepath)
             throws GameControlException {
         
@@ -286,7 +285,7 @@ public class GameControl {
         }
          catch(Exception e) {
             throw new GameControlException(e.getMessage());
-        } */
+        } 
         
         // close the output file
         // EscapeFromInsanityIsland.setCurrentGame(game); // save in EscapeFRom InsanityIsland 
