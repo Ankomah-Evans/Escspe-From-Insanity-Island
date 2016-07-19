@@ -219,6 +219,10 @@ public class GameControl {
         public GameControlException() {
         }
 
+        private GameControlException(String message) {
+            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        }
+
     }
     
     public enum SceneType {
@@ -290,5 +294,4 @@ public class GameControl {
         // close the output file
         // EscapeFromInsanityIsland.setCurrentGame(game); // save in EscapeFRom InsanityIsland 
     }
-    
-
+}

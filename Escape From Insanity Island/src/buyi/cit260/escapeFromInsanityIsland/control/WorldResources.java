@@ -11,7 +11,7 @@ package buyi.cit260.escapeFromInsanityIsland.control;
  */
 public class WorldResources {
     
-   private static materials[] createMaterialList() {
+   private static Material[] createMaterialList() {
        
        // create list of resource materials
        Material[] materials = new Material[Constants.NUMBER_OF_MATERIALS];

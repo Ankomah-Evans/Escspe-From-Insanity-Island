@@ -21,6 +21,7 @@ public class InventoryControl {
     public int totalArrow(int[] numbers)
     throws InventoryControlException {
          int total = 0;
+         boolean result = false;
          InventoryControlView sum = new InventoryControlView();
           //  boolean result = (boolean) sum.doAction(length);
             for (int i = 0; i < numbers.length;)
