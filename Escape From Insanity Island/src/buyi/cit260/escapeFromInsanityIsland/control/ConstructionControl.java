@@ -40,7 +40,19 @@ public class ConstructionControl {
             return true;
         }
    
-}
+    }
+    
+    private long getMaterials(string[] materials) {
+        
+        long total = 0; // initialize total to zero
+        
+        // navigate a one dimensional array using a for loop with an index
+        
+        for (int i=0; i < materials.length; i++) {
+            total += materials[i];
+        }
+        return total;
+    }
     
     
     public void constructNewSpear() {
