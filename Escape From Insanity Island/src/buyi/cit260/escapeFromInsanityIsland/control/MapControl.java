@@ -9,6 +9,7 @@ package buyi.cit260.escapeFromInsanityIsland.control;
 import byui.cit260.escapeFromInsanityIsland.exceptions.MapControlException;
 import byui.cit260.escapeFromInsanityIsland.model.Map;
 import byui.cit260.escapeFromInsanityIsland.model.Scene;
+import byui.cit260.escapeFromInsanityIsland.model.Character;
 import escape.from.insanity.island.EscapeFromInsanityIsland;
 import java.awt.Point;
 import java.io.PrintWriter;
@@ -58,28 +59,28 @@ public class MapControl {
         return 0;
     }
 
-    public static int moveCharactersToStartingLocation(Map map) 
-            throws MapControlException {
-        // for every character
-        Character[] character = Character.values();
-        
-        for (Character character : characters) {
-            Point coordinates = character.getCoordinates();
-            MapControl.moveActorToLocation(character, coordinates);
-
-        }     
-        return 0;
-    }
+//    public static int moveCharactersToStartingLocation(Map map) 
+//            throws MapControlException {
+//        // for every character
+//        Character[] character = Character.values();
+//        
+//        for (Character thisCharacter : character) {
+//            Point coordinates = character.getCoordinates();
+//            MapControl.moveCharacterToLocation(character, coordinates);
+//
+//        }     
+//        return 0;
+//    }
 
     public static int assignScenesToLocations(Map map, Scene[] scenes) 
             throws MapControlException {
         // for every scene
-        Scenes[] scenes = Scenes.values();
+       // Scenes[] scenes = Scenes.values();
         
-        for (Scenes scenes : scenes) {
-            Point coordinates = scenes.getCoordinates();
-            MapControl.assignScenesToLocations(map, scenes);
-        }
+//        for (Scenes scenes : scenes) {
+//            Point coordinates = scenes.getCoordinates();
+//            MapControl.assignScenesToLocations(map, scenes);
+//        }
         return 0;
     }
 
@@ -91,15 +92,15 @@ public class MapControl {
     
 }
 
-    public boolean doAction(String choice) {
-       Character character = null
+//    public boolean doAction(String choice) {
+//       Character character = null
+//
+//    // move actor to specified location
+//       try {
+//           MapControl.moveCharacterToLocation(character, coordinates);
+//           } catch (MapControlException me) {
+//              System.out.println(me.getMessage());
+//    }
 
-    // move actor to specified location
-       try {
-           MapControl.moveCharacterToLocation(character, coordinates);
-           } catch (MapControlException me) {
-              System.out.println(me.getMessage());
-    }
 
-}
 

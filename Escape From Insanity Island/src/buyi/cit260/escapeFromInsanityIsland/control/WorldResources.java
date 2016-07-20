@@ -5,36 +5,40 @@
  */
 package buyi.cit260.escapeFromInsanityIsland.control;
 
+import byui.cit260.escapeFromInsanityIsland.model.Resources;
+
 /**
  *
  * @author StarrfoxxW8
  */
 public class WorldResources {
     
-   private static Material[] createMaterialList() {
+    private static Resources[] material;
+    
+   public Resources[] createResourcesList() {
        
        // create list of resource materials
-       Material[] materials = new Material[Constants.NUMBER_OF_MATERIALS];
+       this.material = new Resources[6];
        
-       Material iron = new Material("iron");
-       materials[Constants.IRON] = iron;
+       Resources iron = new Resources("iron");
+       this.material [Constants.IRON] = iron;
        
-       Material gold = new Material("gold");
-       materials[Constants.GOLD] = gold;
+       Resources gold = new Resources("gold");
+       this.material [Constants.GOLD] = gold;
        
-       Material stone = new Material("stone");
-       materials[Constants.STONE] = stone;
+       Resources stone = new Resources("stone");
+       this.material [Constants.STONE] = stone;
        
-       Material wood = new Material("wood");
-       materials[Constants.WOOD] = wood;
+       Resources wood = new Resources("wood");
+       this.material [Constants.WOOD] = wood;
        
-       Material cloth = new Material("cloth");
-       materials[Constants.CLOTH] = cloth;
+       Resources cloth = new Resources("cloth");
+       this.material [Constants.CLOTH] = cloth;
        
-       Material leather = new Material("leather");
-       materials[Constants.LEATHER] = leather;
+       Resources leather = new Resources("leather");
+       this.material [Constants.LEATHER] = leather;
        
-       return materials;
+       return material;
    }
 
     void setDescription(String iron) {

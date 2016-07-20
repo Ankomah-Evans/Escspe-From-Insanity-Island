@@ -33,7 +33,8 @@ public class InventoryControlView extends View {
 
     public int display(String ArrowItem) {
         // super("Enter the length and width of the arrow you want to make.");
-         
+         String length = "";
+         String  width = "";
         this.promptMessageLength = "Enter the length of the Arrow";
         this.promptMessageWidth = "Enter the width of the Arrow";
         boolean finished = false;
@@ -41,7 +42,7 @@ public class InventoryControlView extends View {
         try{
         while(!finished){
             this.console.println("\n" + this.promptMessageLength);
-           String length = this.getInput();
+           length = this.getInput();
             if(parseInt(length) == -1){
                 finished = true;
                 this.console.println("You canceled");
@@ -49,7 +50,7 @@ public class InventoryControlView extends View {
             }
             
             this.console.println("\n" + this.promptMessageWidth);
-           String  width = this.getInput();
+             width = this.getInput();
            if (parseInt (width) == -1){
                finished = true;
                this.console.println("You canceled");
@@ -63,9 +64,9 @@ public class InventoryControlView extends View {
         }
       
        sizeOfArrow soa = new sizeOfArrow();
-       soa.calculateArrowSize(Integer.parseInt(length), Integer.parseInt(width));
+      // soa.calculateArrowSize(Integer.parseInt(length), Integer.parseInt(width));
                  
-        return arrowSize;
+        return 0;
     }
 
    @Override 

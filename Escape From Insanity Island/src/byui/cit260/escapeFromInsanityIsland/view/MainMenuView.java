@@ -9,6 +9,8 @@ import buyi.cit260.escapeFromInsanityIsland.control.GameControl;
 import buyi.cit260.escapeFromInsanityIsland.control.SceneController;
 import buyi.cit260.escapeFromInsanityIsland.control.WorldResources;
 import byui.cit260.escapeFromInsanityIsland.exceptions.MapControlException;
+import byui.cit260.escapeFromInsanityIsland.model.Game;
+import byui.cit260.escapeFromInsanityIsland.model.Resources;
 import byui.cit260.escapeFromInsanityIsland.model.Player;
 import escape.from.insanity.island.EscapeFromInsanityIsland;
 import java.util.logging.Level;
@@ -137,9 +139,9 @@ public class MainMenuView extends View {
 
     private void WorldResourceList() {
         StringBuilder line;
-        
-        // Game game = EscapeFromInsanityIsland.getCurrentGame();
-        // WorldResources[] resource = game.getResource();
+        WorldResources wr = new WorldResources();
+        Game game = EscapeFromInsanityIsland.getCurrentGame();
+        Resources[] material = wr.createResourcesList();
         
         System.out.println("\n                LIST OF RESOURCES");
         line = new StringBuilder("                             ");
@@ -150,11 +152,9 @@ public class MainMenuView extends View {
         Iterable<WorldResources> inventory = null;
         
         // for each inventory item
-        for (WorldResources resource : inventory) {
+        for (Resources thismaterial : material) {
             line = new StringBuilder("                           ");
-            line.insert(0, resource.getDescription());
-            line.insert(23, resource.getRequiredAmount());
-            line.insert(33, resource.getQuantityInStock());
+            line.insert(0, thismaterial.getDescription());            
             
         // Display the line
         System.out.println(line.toString());

@@ -16,6 +16,10 @@ public class Resources implements Serializable {
     // class instance variable
     private String description;
     private String resource;
+    
+    public Resources (String description) {
+        this.description = description;
+    }
 
     public String getDescription() {
         return description;
